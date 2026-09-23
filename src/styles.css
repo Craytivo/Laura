@@ -146,3 +146,32 @@ footer{background:#111;color:#aaa;border-top:1px solid #333;padding:45px 5vw 35p
   .mobile-booking-bar strong,.mobile-booking-bar span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   footer{padding:40px 7vw 28px}
 }
+
+/* Premium navigation + finishing pass */
+.nav{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(255,255,255,.94);box-shadow:0 1px 0 rgba(0,0,0,.03)}
+.nav-book{transition:transform .2s ease,background .2s ease}.nav-book:hover{transform:translateY(-1px);background:#2a2a2a!important}
+.button{transition:transform .2s ease,background .2s ease,box-shadow .2s ease}.button-dark:hover{transform:translateY(-1px);background:#292929;box-shadow:0 8px 24px rgba(0,0,0,.12)}.button-light:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,255,255,.08)}
+.hero{position:relative}.hero-copy{position:relative;z-index:2}.hero-art{overflow:hidden}.hero-art:before{content:"";position:absolute;inset:10% 12%;border:1px solid rgba(255,255,255,.35);pointer-events:none}.photo-placeholder,.image-placeholder{box-shadow:0 22px 55px rgba(0,0,0,.07)}
+.section-heading h2,.booking-start-copy h2,.intro h2,.selected-service h2,.gallery-heading h2,.bundle-intro h2{max-width:800px}
+.service-card{transition:transform .2s ease,background .2s ease,box-shadow .2s ease}.service-card:hover{transform:translateX(4px);box-shadow:0 8px 25px rgba(0,0,0,.035)}
+.bundle-card{transition:padding .2s ease}.bundle-card:hover{padding-left:8px}
+.gallery-tile{position:relative;overflow:hidden}.gallery-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.14));opacity:.35;pointer-events:none}
+footer{position:relative}.footer-brand{letter-spacing:-.03em}
+
+@media(max-width:800px){
+  body{padding-bottom:82px}
+  .nav{position:sticky;top:0;height:68px;z-index:100;background:rgba(255,255,255,.98)}
+  .menu{display:flex;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid #deddd8;background:#fff;position:relative;z-index:102}
+  .menu svg{width:20px;height:20px}
+  .nav-links{z-index:101;display:none;top:68px;max-height:calc(100vh - 68px);overflow:auto;background:rgba(255,255,255,.99);box-shadow:0 18px 35px rgba(0,0,0,.1)}
+  .nav-links.open{display:flex}
+  .nav-links button{width:100%;text-align:left}
+  .nav-links .nav-book{text-align:center;justify-content:center}
+  .hero-copy{padding-top:52px}
+  .hero-art{min-height:420px}
+  .section,.dark-section{padding-top:76px;padding-bottom:76px}
+  .service-card:hover{transform:none;box-shadow:none}
+  .gallery-tile{min-height:0}
+  .mobile-booking-bar{z-index:110;box-shadow:0 -10px 30px rgba(0,0,0,.16)}
+}
+@media(min-width:801px){.menu{display:none!important}}
