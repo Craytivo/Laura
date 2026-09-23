@@ -85,16 +85,9 @@ function App() {
           </div>
         </section>
 
-        <section className="intro section">
-          <p className="eyebrow">THE RU EXPERIENCE</p>
-          <h2>Sugaring, without<br /><em>the salon rush.</em></h2>
-          <p>RU Sugaring is a private, home-based studio where every appointment is intentionally personal. Come in, get comfortable, and leave feeling smooth.</p>
-          <div className="intro-meta"><span>01 · PRIVATE</span><span>02 · PERSONAL</span><span>03 · EDMONTON</span></div>
-        </section>
-
         <section className="signature">
           <div className="signature-image">
-            <img className="real-image signature-photo" src={imageFiles[1]} alt="RU Sugaring Brazilian service" loading="lazy" decoding="async" />
+            <img className="real-image signature-photo" src={imageFiles[1]} alt="RU Sugaring Brazilian service" loading="eager" fetchPriority="high" decoding="async" />
           </div>
           <div className="signature-copy">
             <p className="eyebrow">THE SIGNATURE</p>
@@ -103,6 +96,14 @@ function App() {
             <p>A private, personalized appointment with clear pricing and one-on-one attention.</p>
             <button className="button button-dark" onClick={book}>Book Brazilian <ArrowRight size={17}/></button>
           </div>
+        </section>
+
+
+        <section className="intro section">
+          <p className="eyebrow">THE RU EXPERIENCE</p>
+          <h2>Sugaring, without<br /><em>the salon rush.</em></h2>
+          <p>RU Sugaring is a private, home-based studio where every appointment is intentionally personal. Come in, get comfortable, and leave feeling smooth.</p>
+          <div className="intro-meta"><span>01 · PRIVATE</span><span>02 · PERSONAL</span><span>03 · EDMONTON</span></div>
         </section>
 
         <section id="why" className="dark-section">
@@ -177,7 +178,7 @@ function App() {
             <div>
               <p className="eyebrow">YOUR BOOKING</p>
               <h2>{selected ? <><em>{selected[0]}</em><br />is selected.</> : <>Ready to<br /><em>choose?</em></>}</h2>
-              <p>{selected ? `You've chosen ${selected[0]} · ${selected[1]} · ${selected[2]}. The next step is choosing an available time in Acuity.` : "Choose a service above and we'll carry your selection into the next step."}</p>
+              <p>{selected ? `You've chosen ${selected[0]} · ${selected[1]} · ${selected[2]}. Next, choose an available time in Acuity.` : "Choose a service above, then continue to Acuity to select an available time."}</p>
             </div>
             <div className="selected-service-action">
               {selected ? <><div className="chosen-pill"><Check size={15}/> {selected[0]} · {selected[1]}</div><button className="button button-dark" onClick={book}>Continue to Acuity <ArrowRight size={17}/></button></> : <button className="button button-dark" onClick={() => go("services")}>Choose a service <ArrowRight size={17}/></button>}
@@ -222,8 +223,8 @@ function App() {
       </main>
 
       <div className="mobile-booking-bar">
-        <div><span>{selected ? selected[0] : "RU Sugaring"}</span><strong>{selected ? selected[1] : "Book your appointment"}</strong></div>
-        <button onClick={book}>Book now <ArrowRight size={16}/></button>
+        <div><span>{selected ? selected[0] : "Brazilian · Signature"}</span><strong>{selected ? selected[1] : "$45 · 1 hour"}</strong></div>
+        <button aria-label={selected ? `Book ${selected[0]}` : "Book a Brazilian appointment"} onClick={book}>Book <ArrowRight size={16}/></button>
       </div>
 
       <footer>
