@@ -17,7 +17,7 @@ const services = [
   ["Tailored Add-ons", "$10+", "15 min", "Personalize your service with carefully selected add-ons. Prices vary."],
 ];
 
-const bundles = [
+const imageFiles = [\n  "/images/IMG_2317.jpeg",\n  "/images/IMG_2318.jpeg",\n  "/images/IMG_2332.jpeg",\n  "/images/IMG_2333.jpeg",\n  "/images/IMG_2335.jpeg",\n  "/images/IMG_2545.jpeg",\n  "/images/IMG_2600.jpeg",\n  "/images/IMG_2605.jpeg",\n  "/images/IMG_2606.jpeg",\n  "/images/IMG_2607.jpeg",\n  "/images/IMG_2610.jpeg",\n];\n\nconst bundles = [
   ["Brazilian + Underarms", "$55", "55 min", "Bundle & save $10"],
   ["Brazilian + Underarms + Half Legs", "$95", "1 hr 20 min", "Bundle & save $15"],
   ["Full Body Glow", "$155", "2 hours", "Brazilian + underarms + full legs + full arms + tailored add-ons"],
@@ -69,7 +69,7 @@ function App() {
             <div className="hero-trust"><span><Check size={13}/> Private studio</span><span><Check size={13}/> Clear pricing</span><span><Check size={13}/> Online booking</span></div>
           </div>
           <div className="hero-art">
-            <img className="real-image hero-photo" src={imageFiles[0]} alt="RU Sugaring studio" />
+            <img className="real-image hero-photo" src={imageFiles[0]} alt="RU Sugaring Edmonton" fetchPriority="high" decoding="async" />
             <div className="hero-image-label">RU SUGARING · EDMONTON</div>
           </div>
         </section>
@@ -116,7 +116,7 @@ function App() {
 
         <section className="signature">
           <div className="signature-image">
-            <img className="real-image signature-photo" src={imageFiles[1]} alt="RU Sugaring service" />
+            <img className="real-image signature-photo" src={imageFiles[1]} alt="RU Sugaring Brazilian service" loading="lazy" decoding="async" />
           </div>
           <div className="signature-copy">
             <p className="eyebrow">THE SIGNATURE</p>
