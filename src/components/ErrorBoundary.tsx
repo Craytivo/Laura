@@ -20,9 +20,12 @@ export class ErrorBoundary extends Component<Props, State> {
         <p className="eyebrow">RU SUGARING</p>
         <h1>Something went wrong.</h1>
         <p>Please refresh the page and try again.</p>
-        <button className="button button-dark" onClick={() => window.location.reload()}>Refresh page</button>
+        <button className="button button-dark" onClick={() => window.location.reload()}>
+          Refresh page
+        </button>
       </main>;
     }
+
     return this.props.children;
   }
 }
