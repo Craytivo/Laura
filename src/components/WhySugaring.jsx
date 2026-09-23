@@ -1,0 +1,3 @@
+import React from "react";
+const features=[["Thoughtful","Your appointment is personal, not rushed. Every service is tailored to you."],["Private","A comfortable home-based setting with one-on-one attention."],["Simple","Clear services, straightforward pricing, and easy online booking."]];
+export function WhySugaring(){return <section id="why" className="dark-section" data-reveal><div className="section-heading"><p className="eyebrow">WHY SUGARING</p><h2>A gentler approach<br />to hair removal.</h2></div><div className="feature-grid">{features.map(([title,text],i)=><div key={title}><span>{String(i+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p></div>)}</div></section>}
