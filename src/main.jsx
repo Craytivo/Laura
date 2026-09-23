@@ -114,6 +114,20 @@ function App() {
           <p className="eyebrow">THE RU EXPERIENCE</p>
           <h2>Sugaring, without<br /><em>the salon rush.</em></h2>
           <p>RU Sugaring is a private, home-based studio where every appointment is intentionally personal. Come in, get comfortable, and leave feeling smooth.</p>
+          <div className="intro-meta"><span>01 · PRIVATE</span><span>02 · PERSONAL</span><span>03 · EDMONTON</span></div>
+        </section>
+
+        <section className="signature">
+          <div className="signature-image">
+            <div className="image-placeholder"><Sparkles size={22}/><span>YOUR STUDIO PHOTO</span><small>Replace with RU Sugaring photography</small></div>
+          </div>
+          <div className="signature-copy">
+            <p className="eyebrow">THE SIGNATURE</p>
+            <h2>Brazilian<br /><em>sugaring.</em></h2>
+            <div className="signature-price"><strong>$45</strong><span>1 hour</span></div>
+            <p>A private, personalized appointment with clear pricing and one-on-one attention.</p>
+            <button className="button button-dark" onClick={() => chooseService(services[0])}>Book Brazilian <ArrowRight size={17}/></button>
+          </div>
         </section>
 
         <section id="why" className="dark-section">
@@ -147,6 +161,22 @@ function App() {
                 <ChevronRight className="service-arrow" size={19}/>
               </button>
             ))}
+          </div>
+        </section>
+
+        <section className="gallery-section">
+          <div className="gallery-heading">
+            <div>
+              <p className="eyebrow">THE RU EDIT</p>
+              <h2>A closer look<br /><em>at RU.</em></h2>
+            </div>
+            <p>Studio details, smooth results, and the little things that make an appointment feel personal.</p>
+          </div>
+          <div className="gallery-grid">
+            <div className="gallery-tile tall"><span>PHOTO 01</span></div>
+            <div className="gallery-tile"><span>PHOTO 02</span></div>
+            <div className="gallery-tile"><span>PHOTO 03</span></div>
+            <div className="gallery-tile wide"><span>PHOTO 04</span></div>
           </div>
         </section>
 
@@ -214,6 +244,11 @@ function App() {
           </div>
         </section>
       </main>
+
+      <div className="mobile-booking-bar">
+        <div><span>{selected ? selected[0] : "RU Sugaring"}</span><strong>{selected ? selected[1] : "Book your appointment"}</strong></div>
+        <button onClick={selected ? book : () => chooseService(services[0])}>{selected ? "Continue" : "Book now"} <ArrowRight size={16}/></button>
+      </div>
 
       <footer>
         <div className="footer-brand">RU<span>SUGARING</span></div>
