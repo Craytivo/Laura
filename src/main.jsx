@@ -36,6 +36,24 @@ const bundles = [
 function App() {
   const [open, setOpen] = React.useState(false);
   const [selected, setSelected] = React.useState(null);
+
+  React.useEffect(() => {
+    const revealItems = document.querySelectorAll("[data-reveal]");
+    if (!("IntersectionObserver" in window)) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+      return undefined;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
   const bookingUrl = "https://rusugar.as.me/schedule/36a17782?utm_source=website&utm_medium=website&utm_content=book_now";
 
   const book = () => window.open(bookingUrl, "_blank", "noopener,noreferrer");
@@ -53,21 +71,27 @@ function App() {
   return (
     <div className="site">
       <header className="nav">
-        <button className="wordmark" onClick={() => go("home")}>RU<span>SUGARING</span></button>
-        <nav className={open ? "nav-links open" : "nav-links"}>
+        <button className="wordmark" onClick={() => go("home")} aria-label="RU Sugaring home">
+          <strong>RU</strong><span>SUGARING</span>
+        </button>
+        <div className={open ? "nav-links open" : "nav-links"}>
+          <div className="nav-mobile-meta"><span>RU SUGARING</span><small>EDMONTON · PRIVATE STUDIO</small></div>
+          <nav>
           <button onClick={() => go("services")}>Services</button>
           <button onClick={() => go("why")}>Why sugaring</button>
           <button onClick={() => go("loyalty")}>Loyalty</button>
           <button onClick={() => go("faq")}>FAQ</button>
           <button className="nav-book" onClick={book}>Book now <ArrowRight size={15}/></button>
-        </nav>
+          </nav>
+          <div className="nav-mobile-book"><span>$45 · Brazilian</span><button onClick={book}>Book your appointment <ArrowRight size={15}/></button></div>
+        </div>
         <button className="menu" aria-label="Toggle navigation" onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
         </button>
       </header>
 
       <main>
-        <section id="home" className="hero">
+        <section id="home" className="hero" data-reveal>
           <div className="hero-copy">
             <p className="eyebrow">EDMONTON · HOME-BASED SUGARING</p>
             <h1>Smooth skin.<br /><em>Simple.</em></h1>
@@ -80,33 +104,39 @@ function App() {
             <div className="hero-trust"><span><Check size={13}/> Private studio</span><span><Check size={13}/> Clear pricing</span><span><Check size={13}/> Online booking</span></div>
           </div>
           <div className="hero-art">
-            <img className="real-image hero-photo" src={imageFiles[0]} alt="RU Sugaring Edmonton" fetchPriority="high" decoding="async" />
+            <div className="hero-art-index">01 <span>THE STUDIO</span></div>
+            <div className="hero-art-frame">
+              <img className="real-image hero-photo" src={imageFiles[0]} alt="RU Sugaring Edmonton" fetchPriority="high" decoding="async" />
             <div className="hero-image-label">RU SUGARING · EDMONTON</div>
+              </div>
+            <div className="hero-art-note">PRIVATE / PERSONAL / EDMONTON</div>
           </div>
         </section>
 
-        <section className="signature">
+        <section className="signature" data-reveal>
           <div className="signature-image">
             <img className="real-image signature-photo" src={imageFiles[1]} alt="RU Sugaring Brazilian service" loading="eager" fetchPriority="high" decoding="async" />
           </div>
           <div className="signature-copy">
-            <p className="eyebrow">THE SIGNATURE</p>
-            <h2>Brazilian<br /><em>sugaring.</em></h2>
-            <div className="signature-price"><strong>$45</strong><span>1 hour</span></div>
-            <p>A private, personalized appointment with clear pricing and one-on-one attention.</p>
+            <div className="signature-kicker"><span>01</span><span>THE RU SIGNATURE</span></div>
+            <p className="eyebrow">BRAZILIAN</p>
+            <h2>Smooth,<br /><em>made personal.</em></h2>
+            <div className="signature-price"><strong>$45</strong><span>60 MINUTES</span></div>
+            <p>A private, one-on-one Brazilian appointment designed around comfort, care, and beautifully smooth results.</p>
+            <div className="signature-details"><span>PRIVATE STUDIO</span><span>EDMONTON</span><span>ONLINE BOOKING</span></div>
             <button className="button button-dark" onClick={book}>Book Brazilian <ArrowRight size={17}/></button>
           </div>
         </section>
 
 
-        <section className="intro section">
+        <section className="intro section" data-reveal>
           <p className="eyebrow">THE RU EXPERIENCE</p>
           <h2>Sugaring, without<br /><em>the salon rush.</em></h2>
           <p>RU Sugaring is a private, home-based studio where every appointment is intentionally personal. Come in, get comfortable, and leave feeling smooth.</p>
           <div className="intro-meta"><span>01 · PRIVATE</span><span>02 · PERSONAL</span><span>03 · EDMONTON</span></div>
         </section>
 
-        <section id="why" className="dark-section">
+        <section id="why" className="dark-section" data-reveal>
           <div className="section-heading">
             <p className="eyebrow">WHY SUGARING</p>
             <h2>A gentler approach<br />to hair removal.</h2>
@@ -118,7 +148,7 @@ function App() {
           </div>
         </section>
 
-        <section id="services" className="section services">
+        <section id="services" className="section services" data-reveal>
           <div className="section-heading light">
             <p className="eyebrow">SERVICE MENU</p>
             <h2>Pick your<br /><em>smooth.</em></h2>
@@ -140,7 +170,7 @@ function App() {
           </div>
         </section>
 
-        <section className="gallery-section">
+        <section className="gallery-section" data-reveal>
           <div className="gallery-heading">
             <div>
               <p className="eyebrow">THE RU EDIT</p>
@@ -148,7 +178,7 @@ function App() {
             </div>
             <p>Studio details, smooth results, and the little things that make an appointment feel personal.</p>
           </div>
-          <div className="gallery-grid">
+          <div className="editorial-gallery">
             {imageFiles.slice(2).map((src, i) => (
               <div className={`gallery-item gallery-item-${i + 1}`} key={src}>
                 <img className="real-image gallery-photo" src={src} alt={`RU Sugaring studio detail ${i + 1}`} loading="lazy" decoding="async" />
@@ -157,7 +187,7 @@ function App() {
           </div>
         </section>
 
-        <section className="bundles section">
+        <section className="bundles section" data-reveal>
           <div className="bundle-intro">
             <p className="eyebrow">BUNDLES</p>
             <h2>More smooth.<br /><em>More value.</em></h2>
@@ -173,7 +203,7 @@ function App() {
           </div>
         </section>
 
-        <section className="selected-service section">
+        <section className="selected-service section" data-reveal>
           <div className="selected-service-inner">
             <div>
               <p className="eyebrow">YOUR BOOKING</p>
@@ -186,7 +216,7 @@ function App() {
           </div>
         </section>
 
-        <section id="loyalty" className="loyalty">
+        <section id="loyalty" className="loyalty" data-reveal>
           <div className="loyalty-icon"><Sparkles size={26}/></div>
           <p className="eyebrow">RU LOYALTY</p>
           <h2>Come back.<br /><em>Save more.</em></h2>
@@ -194,7 +224,7 @@ function App() {
           <button className="button button-light" onClick={() => chooseService(services[0])}>Start with a Brazilian <ArrowRight size={17}/></button>
         </section>
 
-        <section id="faq" className="section faq">
+        <section id="faq" className="section faq" data-reveal>
           <div className="section-heading light">
             <p className="eyebrow">GOOD TO KNOW</p>
             <h2>Your questions,<br /><em>answered.</em></h2>
@@ -209,7 +239,7 @@ function App() {
           </div>
         </section>
 
-        <section id="book" className="book">
+        <section id="book" className="book" data-reveal>
           <div>
             <p className="eyebrow">READY WHEN YOU ARE</p>
             <h2>Let's get<br /><em>you smooth.</em></h2>
