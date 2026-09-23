@@ -20,6 +20,9 @@ const bundles = [
 
 function App() {
   const [open, setOpen] = React.useState(false);
+  const bookingUrl = "https://rusugar.as.me/schedule/36a17782?utm_source=website&utm_medium=website&utm_content=book_now";
+
+  const book = () => window.open(bookingUrl, "_blank", "noopener,noreferrer");
 
   const go = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -35,7 +38,7 @@ function App() {
           <button onClick={() => go("why")}>Why sugaring</button>
           <button onClick={() => go("loyalty")}>Loyalty</button>
           <button onClick={() => go("faq")}>FAQ</button>
-          <button className="nav-book" onClick={() => go("book")}>Book now <ArrowRight size={15}/></button>
+          <button className="nav-book" onClick={book}>Book now <ArrowRight size={15}/></button>
         </nav>
         <button className="menu" aria-label="Toggle navigation" onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
@@ -49,7 +52,7 @@ function App() {
             <h1>Smooth skin.<br /><em>Simple.</em></h1>
             <p className="hero-text">A private sugaring studio in Edmonton focused on comfortable appointments, thoughtful service, and beautifully smooth results.</p>
             <div className="hero-actions">
-              <button className="button button-dark" onClick={() => go("book")}>Book your appointment <ArrowRight size={17}/></button>
+              <button className="button button-dark" onClick={book}>Book your appointment <ArrowRight size={17}/></button>
               <button className="text-button" onClick={() => go("services")}>View services</button>
             </div>
           </div>
@@ -121,7 +124,7 @@ function App() {
           <p className="eyebrow">RU LOYALTY</p>
           <h2>Come back.<br /><em>Save more.</em></h2>
           <p>Complete 5 sessions with RU Sugaring and receive 10% off your services.</p>
-          <button className="button button-light" onClick={() => go("book")}>Start your first session <ArrowRight size={17}/></button>
+          <button className="button button-light" onClick={book}>Start your first session <ArrowRight size={17}/></button>
         </section>
 
         <section id="faq" className="section faq">
@@ -146,7 +149,7 @@ function App() {
             <p>Choose your service and find a time that works for you.</p>
           </div>
           <div className="book-actions">
-            <button className="button button-light">Book an appointment <CalendarDays size={17}/></button>
+            <button className="button button-light" onClick={book}>Book an appointment <CalendarDays size={17}/></button>
             <button className="gift-button"><Gift size={18}/> Gift cards</button>
           </div>
         </section>
