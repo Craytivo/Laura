@@ -7,14 +7,14 @@ export const site: SiteConfig = {
   studioLabel:"Edmonton · Private Studio",
   description:"A private sugaring studio in Edmonton focused on comfortable appointments, thoughtful service, and beautifully smooth results.",
   heroEyebrow:"Edmonton · Home-based sugaring",
-  trust:["Private studio","Clear pricing","Online booking"],
+  trust:["Private studio","One-on-one care","Clear pricing"],
   experience:"RU Sugaring is a private, home-based studio where every appointment is intentionally personal. Come in, get comfortable, and leave feeling smooth.",
   why:[
     ["Thoughtful","Your appointment is personal, not rushed. Every service is tailored to you."],
     ["Private","A comfortable home-based setting with one-on-one attention."],
     ["Simple","Clear services, straightforward pricing, and easy online booking."]
   ],
-  signature:{ kicker:"01", label:"The RU Signature", details:["Private studio","Edmonton","Online booking"] },
+  signature:{ kicker:"01", label:"The RU Signature", details:["Private studio","One-on-one care","Edmonton"] },
   loyalty:{ sessions:5, discount:"10%", heading:["Come back.","Save more."], body:"Complete 5 sessions with RU Sugaring and receive 10% off your services." },
   faq:[
     ["Where are you located?","RU Sugaring is a private home-based studio in Edmonton. Exact location details can be provided with your booking."],
