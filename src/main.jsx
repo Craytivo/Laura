@@ -68,12 +68,9 @@ function App() {
             </div>
             <div className="hero-trust"><span><Check size={13}/> Private studio</span><span><Check size={13}/> Clear pricing</span><span><Check size={13}/> Online booking</span></div>
           </div>
-          <div className="hero-art" aria-label="Photo placeholder">
-            <div className="photo-placeholder">
-              <Sparkles size={24} strokeWidth={1.5}/>
-              <span>RU SUGARING</span>
-              <small>Your studio photography will live here</small>
-            </div>
+          <div className="hero-art">
+            <img className="real-image hero-photo" src={imageFiles[0]} alt="RU Sugaring studio" />
+            <div className="hero-image-label">RU SUGARING · EDMONTON</div>
           </div>
         </section>
 
@@ -119,7 +116,7 @@ function App() {
 
         <section className="signature">
           <div className="signature-image">
-            <div className="image-placeholder"><Sparkles size={22}/><span>YOUR STUDIO PHOTO</span><small>Replace with RU Sugaring photography</small></div>
+            <img className="real-image signature-photo" src={imageFiles[1]} alt="RU Sugaring service" />
           </div>
           <div className="signature-copy">
             <p className="eyebrow">THE SIGNATURE</p>
@@ -173,10 +170,11 @@ function App() {
             <p>Studio details, smooth results, and the little things that make an appointment feel personal.</p>
           </div>
           <div className="gallery-grid">
-            <div className="gallery-tile tall"><span>PHOTO 01</span></div>
-            <div className="gallery-tile"><span>PHOTO 02</span></div>
-            <div className="gallery-tile"><span>PHOTO 03</span></div>
-            <div className="gallery-tile wide"><span>PHOTO 04</span></div>
+            {imageFiles.slice(2, 6).map((src, i) => (
+              <div className={i === 0 ? "gallery-tile tall" : i === 3 ? "gallery-tile wide" : "gallery-tile"} key={src}>
+                <img className="real-image gallery-photo" src={src} alt={`RU Sugaring gallery ${i + 1}`} />
+              </div>
+            ))}
           </div>
         </section>
 
