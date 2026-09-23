@@ -19,12 +19,8 @@ const services = [
 
 const imageFiles = [
   "/images/IMG_2317.jpeg",
-  "/images/IMG_2318.jpeg",
-  "/images/IMG_2332.jpeg",
   "/images/IMG_2333.jpeg",
-  "/images/IMG_2335.jpeg",
   "/images/IMG_2545.jpeg",
-  "/images/IMG_2600.jpeg",
   "/images/IMG_2605.jpeg",
   "/images/IMG_2606.jpeg",
   "/images/IMG_2607.jpeg",
