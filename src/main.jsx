@@ -152,9 +152,9 @@ function App() {
             <p>Studio details, smooth results, and the little things that make an appointment feel personal.</p>
           </div>
           <div className="gallery-grid">
-            {imageFiles.slice(2, 6).map((src, i) => (
-              <div className={i === 0 ? "gallery-tile tall" : i === 3 ? "gallery-tile wide" : "gallery-tile"} key={src}>
-                <img className="real-image gallery-photo" src={src} alt={`RU Sugaring gallery ${i + 1}`} />
+            {imageFiles.slice(2).map((src, i) => (
+              <div className={`gallery-item gallery-item-${i + 1}`} key={src}>
+                <img className="real-image gallery-photo" src={src} alt={`RU Sugaring studio detail ${i + 1}`} loading="lazy" decoding="async" />
               </div>
             ))}
           </div>
