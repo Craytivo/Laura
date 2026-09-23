@@ -5,6 +5,8 @@ test("homepage renders the primary booking CTA", async ({ page }) => {
   await expect(page.getByRole("heading", { name: /Smooth skin/i })).toBeVisible();
   await expect(page.getByRole("button", { name: /Book your Brazilian/i }).first()).toBeVisible();
   await expect(page.locator(".hero-photo")).toHaveAttribute("alt", /RU Sugaring Edmonton studio/i);
+  await expect(page.locator(".hero-offer")).toContainText("$45");
+  await expect(page.locator(".hero-trust")).toContainText("Private studio");
 });
 
 test("mobile keeps booking action accessible without horizontal overflow", async ({ page }) => {
@@ -13,6 +15,7 @@ test("mobile keeps booking action accessible without horizontal overflow", async
 
   await expect(page.locator(".mobile-booking-bar")).toBeVisible();
   await expect(page.locator(".mobile-booking-bar button")).toBeVisible();
+  await expect(page.locator(".mobile-booking-copy small")).toContainText("Private · Online booking");
 
   const dimensions = await page.evaluate(() => ({
     viewport: document.documentElement.clientWidth,
