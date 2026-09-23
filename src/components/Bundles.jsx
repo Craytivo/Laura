@@ -1,0 +1,3 @@
+import React from "react";
+import { ChevronRight } from "lucide-react";
+export function Bundles({ bundles, onSelect }){return <section className="bundles section" data-reveal><div className="bundle-intro"><p className="eyebrow">BUNDLES</p><h2>More smooth.<br /><em>More value.</em></h2><p>Pair popular services and save on the combined appointment.</p></div><div className="bundle-list">{bundles.map(bundle=><button className="bundle-card" key={bundle.id} onClick={()=>onSelect(bundle)}><div><h3>{bundle.name}</h3><p>{bundle.description}</p></div><div className="bundle-price"><strong>{bundle.price}</strong><span>{bundle.duration}</span><ChevronRight size={16}/></div></button>)}</div></section>}
