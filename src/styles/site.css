@@ -1250,3 +1250,25 @@ main{background:var(--ru-paper)}
 @media(min-width:801px){
   .hero-offer-price strong{font-size:clamp(42px,4vw,58px)}
 }
+
+
+/* Critical above-the-fold visibility: never hide the first screen while reveal JS initializes. */
+.hero{
+  opacity:1;
+  transform:none;
+}
+@media(max-width:800px){
+  .nav{position:sticky;z-index:40}
+  .menu{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    min-width:48px;
+    position:relative;
+    z-index:50;
+    color:var(--ru-deep);
+  }
+  .menu svg{width:24px;height:24px;display:block}
+}
