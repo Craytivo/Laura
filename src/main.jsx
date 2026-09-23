@@ -17,7 +17,19 @@ const services = [
   ["Tailored Add-ons", "$10+", "15 min", "Personalize your service with carefully selected add-ons. Prices vary."],
 ];
 
-const imageFiles = [\n  "/images/IMG_2317.jpeg",\n  "/images/IMG_2318.jpeg",\n  "/images/IMG_2332.jpeg",\n  "/images/IMG_2333.jpeg",\n  "/images/IMG_2335.jpeg",\n  "/images/IMG_2545.jpeg",\n  "/images/IMG_2600.jpeg",\n  "/images/IMG_2605.jpeg",\n  "/images/IMG_2606.jpeg",\n  "/images/IMG_2607.jpeg",\n  "/images/IMG_2610.jpeg",\n];\n\nconst bundles = [
+const imageFiles = [
+  "/images/IMG_2317.jpeg",
+  "/images/IMG_2318.jpeg",
+  "/images/IMG_2332.jpeg",
+  "/images/IMG_2333.jpeg",
+  "/images/IMG_2335.jpeg",
+  "/images/IMG_2545.jpeg",
+  "/images/IMG_2600.jpeg",
+  "/images/IMG_2605.jpeg",
+  "/images/IMG_2606.jpeg",
+  "/images/IMG_2607.jpeg",
+  "/images/IMG_2610.jpeg",
+];\n\nconst bundles = [
   ["Brazilian + Underarms", "$55", "55 min", "Bundle & save $10"],
   ["Brazilian + Underarms + Half Legs", "$95", "1 hr 20 min", "Bundle & save $15"],
   ["Full Body Glow", "$155", "2 hours", "Brazilian + underarms + full legs + full arms + tailored add-ons"],
@@ -37,7 +49,7 @@ function App() {
 
   const chooseService = (service) => {
     setSelected(service);
-    requestAnimationFrame(() => document.getElementById("booking-start")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    requestAnimationFrame(() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   };
 
   return (
@@ -62,8 +74,9 @@ function App() {
             <p className="eyebrow">EDMONTON · HOME-BASED SUGARING</p>
             <h1>Smooth skin.<br /><em>Simple.</em></h1>
             <p className="hero-text">A private sugaring studio in Edmonton focused on comfortable appointments, thoughtful service, and beautifully smooth results.</p>
+            <div className="hero-offer"><strong>$45</strong><span>Brazilian · 1 hour</span></div>
             <div className="hero-actions">
-              <button className="button button-dark" onClick={() => chooseService(services[0])}>Book your Brazilian <ArrowRight size={17}/></button>
+              <button className="button button-dark" onClick={book}>Book your Brazilian <ArrowRight size={17}/></button>
               <button className="text-button" onClick={() => go("services")}>View all services</button>
             </div>
             <div className="hero-trust"><span><Check size={13}/> Private studio</span><span><Check size={13}/> Clear pricing</span><span><Check size={13}/> Online booking</span></div>
@@ -71,39 +84,6 @@ function App() {
           <div className="hero-art">
             <img className="real-image hero-photo" src={imageFiles[0]} alt="RU Sugaring Edmonton" fetchPriority="high" decoding="async" />
             <div className="hero-image-label">RU SUGARING · EDMONTON</div>
-          </div>
-        </section>
-
-        <section id="booking-start" className="booking-start section">
-          <div className="booking-start-copy">
-            <p className="eyebrow">BOOKING MADE SIMPLE</p>
-            <h2>What are you<br /><em>booking today?</em></h2>
-            <p>Choose a service below. When you're ready, we'll take you straight to the RU Sugaring booking page to choose your time.</p>
-          </div>
-          <div className="booking-panel">
-            <div className="booking-panel-head">
-              <div>
-                <span>01</span>
-                <strong>Choose your service</strong>
-              </div>
-              <small>{selected ? "Selected" : "Start here"}</small>
-            </div>
-            <div className="quick-picks">
-              {services.slice(0, 4).map((service) => (
-                <button className={selected?.[0] === service[0] ? "quick-pick selected" : "quick-pick"} key={service[0]} onClick={() => setSelected(service)}>
-                  <span><b>{service[0]}</b><small>{service[2]}</small></span>
-                  <strong>{service[1]}</strong>
-                  <ChevronRight size={17}/>
-                </button>
-              ))}
-            </div>
-            {selected && (
-              <div className="selection-summary">
-                <div><span>Selected service</span><strong>{selected[0]}</strong><small>{selected[1]} · {selected[2]}</small></div>
-                <button className="button button-dark" onClick={book}>Continue to booking <ArrowRight size={16}/></button>
-              </div>
-            )}
-            {!selected && <button className="booking-main-cta" onClick={() => go("services")}>Browse the full menu <ArrowRight size={16}/></button>}
           </div>
         </section>
 
@@ -123,7 +103,7 @@ function App() {
             <h2>Brazilian<br /><em>sugaring.</em></h2>
             <div className="signature-price"><strong>$45</strong><span>1 hour</span></div>
             <p>A private, personalized appointment with clear pricing and one-on-one attention.</p>
-            <button className="button button-dark" onClick={() => chooseService(services[0])}>Book Brazilian <ArrowRight size={17}/></button>
+            <button className="button button-dark" onClick={book}>Book Brazilian <ArrowRight size={17}/></button>
           </div>
         </section>
 
@@ -237,7 +217,7 @@ function App() {
             <p>Choose your service, then find a time that works for you.</p>
           </div>
           <div className="book-actions">
-            <button className="button button-light" onClick={() => chooseService(services[0])}>Book your Brazilian <CalendarDays size={17}/></button>
+            <button className="button button-light" onClick={book}>Book your Brazilian <CalendarDays size={17}/></button>
             <button className="gift-button"><Gift size={18}/> Gift cards</button>
           </div>
         </section>
@@ -245,7 +225,7 @@ function App() {
 
       <div className="mobile-booking-bar">
         <div><span>{selected ? selected[0] : "RU Sugaring"}</span><strong>{selected ? selected[1] : "Book your appointment"}</strong></div>
-        <button onClick={selected ? book : () => chooseService(services[0])}>{selected ? "Continue" : "Book now"} <ArrowRight size={16}/></button>
+        <button onClick={book}>Book now <ArrowRight size={16}/></button>
       </div>
 
       <footer>
