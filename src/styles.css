@@ -668,3 +668,44 @@ footer p{font-size:10px;letter-spacing:.08em}
     transition-duration:.01ms!important;
   }
 }
+
+
+/* Image-led palette — warm neutrals pulled into the interface without replacing the black-and-white identity. */
+:root{
+  --image-sand:#e7dfd4;
+  --image-stone:#d2cbc1;
+  --image-taupe:#b9aa9a;
+  --image-ink-warm:#2b2824;
+  --image-wash:#f4f0ea;
+  --image-line:rgba(84,72,60,.18);
+}
+.hero{background:linear-gradient(90deg,#f8f8f6 0%,#f8f8f6 72%,var(--image-wash) 100%)}
+.hero-art{background:var(--image-stone)}
+.hero-art:after{color:#776d63}
+.hero-offer{border-color:var(--image-taupe)}
+.signature{background:var(--image-wash)}
+.signature-copy{background:linear-gradient(135deg,#f4f0ea 0%,#eee8df 100%)}
+.signature-price{border-color:var(--image-line)}
+.signature-copy:before{background:var(--image-ink-warm)}
+.intro:before{color:#eee8df}
+.services{background:#f1efeb}
+.service-list{border-color:var(--image-line)}
+.service-card{border-color:var(--image-line)}
+.service-card.featured{box-shadow:inset 3px 0 0 var(--image-taupe)}
+.bundles{background:#f1efeb}
+.bundle-list{border-color:var(--image-line)}
+.bundle-card{border-color:var(--image-line)}
+.chosen-pill{background:var(--image-wash);border-color:var(--image-line)}
+.booking-start{background:linear-gradient(135deg,#faf9f7 0%,#f4f0ea 100%)}
+.booking-panel{border-color:var(--image-line)}
+.gallery-section{background:#fbfaf8}
+.gallery-heading>p,.hero-text,.section-lede{color:#625d57}
+@media(max-width:800px){
+  .nav-links{background:rgba(248,246,242,.98)}
+  .hero-copy{background:linear-gradient(180deg,#f8f8f6 0%,#f5f1eb 100%)}
+  .hero-art{background:var(--image-stone)}
+  .signature-copy{background:#f1ebe3}
+  .services,.bundles{background:#f1efeb}
+  .booking-start{background:#f4f0ea}
+  .service-card.featured{box-shadow:inset 3px 0 0 var(--image-taupe)}
+}
