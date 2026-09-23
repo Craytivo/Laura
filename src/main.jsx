@@ -29,7 +29,9 @@ const imageFiles = [
   "/images/IMG_2606.jpeg",
   "/images/IMG_2607.jpeg",
   "/images/IMG_2610.jpeg",
-];\n\nconst bundles = [
+];
+
+const bundles = [
   ["Brazilian + Underarms", "$55", "55 min", "Bundle & save $10"],
   ["Brazilian + Underarms + Half Legs", "$95", "1 hr 20 min", "Bundle & save $15"],
   ["Full Body Glow", "$155", "2 hours", "Brazilian + underarms + full legs + full arms + tailored add-ons"],
