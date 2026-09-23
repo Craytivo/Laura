@@ -1162,10 +1162,13 @@ main{background:var(--ru-paper)}
     letter-spacing:.13em;
   }
   .hero-offer-service{
+    flex:1 1 auto;
+    min-width:0;
     padding-left:13px;
   }
   .hero-offer-service b{
     font-size:10px;
+    white-space:nowrap;
   }
   .hero-offer-service span{
     font-size:8px;
