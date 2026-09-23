@@ -1047,3 +1047,206 @@ main{background:var(--ru-paper)}
 @media(prefers-reduced-motion:reduce){
   .hero-art .hero-photo,.gallery-photo{transition:none}
 }
+
+
+/* Mobile trust + conversion refinement */
+.hero-offer{
+  background:rgba(244,240,234,.72);
+  border:1px solid var(--ru-rule);
+  border-left:3px solid var(--ru-clay);
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  max-width:430px;
+}
+.hero-offer-price,.hero-offer-service{
+  display:flex;
+  flex-direction:column;
+}
+.hero-offer-price strong{
+  line-height:.9;
+}
+.hero-offer-price span,.hero-offer-service span{
+  color:var(--ru-muted);
+}
+.hero-offer-service{
+  gap:3px;
+  padding-left:18px;
+  border-left:1px solid var(--ru-rule);
+}
+.hero-offer-service b{
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.hero-actions .text-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-height:48px;
+  padding:10px 4px;
+}
+.hero-trust{
+  gap:9px 18px;
+}
+.hero-trust span{
+  min-height:30px;
+  color:#514b45;
+  font-weight:500;
+}
+.hero-trust span svg{
+  color:var(--ru-deep);
+  flex:0 0 auto;
+}
+
+.signature-details{
+  position:relative;
+}
+.signature-details:before{
+  content:"PERSONALIZED APPOINTMENT";
+  display:block;
+  width:100%;
+  margin-bottom:2px;
+  font-size:7px;
+  letter-spacing:.16em;
+  color:#81766c;
+}
+
+.feature-grid{
+  gap:4vw;
+}
+.feature-grid>div{
+  position:relative;
+}
+.feature-grid p{
+  max-width:330px;
+}
+
+.mobile-booking-copy small{
+  font-size:8px;
+  line-height:1.2;
+  color:#bdb6ae;
+  letter-spacing:.04em;
+}
+.mobile-booking-bar button{
+  min-height:52px;
+  min-width:104px;
+}
+
+@media(max-width:800px){
+  .hero-copy{
+    padding-top:32px;
+    padding-bottom:26px;
+  }
+  .hero .eyebrow{
+    margin-bottom:15px;
+  }
+  .hero-text{
+    max-width:34rem;
+    margin:18px 0;
+  }
+  .hero-offer{
+    max-width:none;
+    padding:13px 14px;
+    margin-top:2px;
+    gap:13px;
+  }
+  .hero-offer-price strong{
+    font-size:38px;
+  }
+  .hero-offer-price span{
+    font-size:7px;
+    letter-spacing:.13em;
+  }
+  .hero-offer-service{
+    padding-left:13px;
+  }
+  .hero-offer-service b{
+    font-size:10px;
+  }
+  .hero-offer-service span{
+    font-size:8px;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+  }
+  .hero-actions{
+    margin-top:11px;
+    gap:7px;
+  }
+  .hero-actions .button{
+    min-height:52px;
+  }
+  .hero-actions .text-button{
+    width:100%;
+    min-height:48px;
+    border:1px solid var(--ru-rule);
+    background:rgba(255,255,255,.46);
+    padding:11px 15px;
+  }
+  .hero-trust{
+    grid-template-columns:1fr 1fr;
+    gap:4px 10px;
+    margin-top:14px;
+  }
+  .hero-trust span{
+    min-height:30px;
+    font-size:8.5px;
+  }
+  .hero-art{
+    height:25vh;
+    max-height:220px;
+  }
+
+  .signature-copy{
+    padding-top:50px;
+    padding-bottom:46px;
+  }
+  .signature-details{
+    margin-top:18px;
+    margin-bottom:24px;
+    gap:9px 12px;
+  }
+  .signature-details:before{
+    font-size:6.5px;
+  }
+  .feature-grid{
+    margin-top:42px;
+  }
+  .feature-grid>div{
+    padding:21px 0 23px;
+  }
+  .feature-grid h3{
+    margin-top:9px;
+  }
+  .feature-grid p{
+    line-height:1.6;
+  }
+
+  .mobile-booking-bar{
+    min-height:72px;
+    grid-template-columns:minmax(0,1fr) auto;
+    padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));
+  }
+  .mobile-booking-copy{
+    gap:3px!important;
+  }
+  .mobile-booking-copy span{
+    font-size:7.5px!important;
+  }
+  .mobile-booking-copy strong{
+    font-size:12px!important;
+  }
+  .mobile-booking-copy small{
+    display:block;
+  }
+  .mobile-booking-bar button{
+    min-width:106px;
+    min-height:52px;
+  }
+}
+@media(min-width:801px){
+  .hero-offer-price strong{font-size:clamp(42px,4vw,58px)}
+}
