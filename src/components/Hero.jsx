@@ -4,7 +4,7 @@ import { Button } from "./Button";
 import { ResponsiveImage } from "./ResponsiveImage";
 
 export function Hero({image,service,business,onBook,onNavigate}){
- return <section id="home" className="hero" data-reveal>
+ return <section id="home" className="hero">
   <div className="hero-copy">
    <p className="eyebrow">{business.heroEyebrow.toUpperCase()}</p>
    <h1>Smooth skin.<br/><em>Simple.</em></h1>
