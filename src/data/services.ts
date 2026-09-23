@@ -14,9 +14,20 @@ export const services: Service[] = [
   { id:"tailored-add-ons", name:"Tailored Add-ons", price:"$10+", duration:"15 min", description:"Personalize your service with carefully selected add-ons. Prices vary." }
 ];
 
-export const brazilian: Service = services.find(({ id }: Service) => id === "brazilian") as Service;
-export const getService = (id: ServiceId): Service => {
+const featuredService = services.find(({ id }) => id === "brazilian");
+
+if (!featuredService) {
+  throw new Error("Featured Brazilian service is missing from the service catalog.");
+}
+
+export const brazilian: Service = featuredService;
+
+export function getService(id: ServiceId): Service {
   const service = services.find(item => item.id === id);
-  if (!service) throw new Error(`Unknown service: ${id}`);
+
+  if (!service) {
+    throw new Error(`Unknown service: ${id}`);
+  }
+
   return service;
-};
+}
