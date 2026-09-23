@@ -1,0 +1,2 @@
+import React from "react";
+export function Footer({ onNavigate }){return <footer><div className="footer-brand">RU<span>SUGARING</span></div><p>Edmonton, Alberta · Home-based sugaring studio</p><div className="footer-links"><button onClick={()=>onNavigate("services")}>Services</button><button onClick={()=>onNavigate("faq")}>FAQ</button><button onClick={()=>onNavigate("book")}>Book</button></div><small>© {new Date().getFullYear()} RU Sugaring</small></footer>}
