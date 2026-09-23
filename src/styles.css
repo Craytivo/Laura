@@ -447,3 +447,125 @@ footer p{font-size:10px;letter-spacing:.08em}
   .book{padding:90px 7vw 100px}
   .book h2{font-size:clamp(56px,15vw,80px)}
 }
+
+
+/* Mobile-first refinement — RU Sugaring */
+@media(max-width:800px){
+  html{font-size:16px;scroll-padding-top:68px}
+  body{overflow-x:hidden;padding-bottom:78px}
+  .site{width:100%;overflow:hidden}
+  .nav{height:68px;padding:0 18px}
+  .wordmark{font-size:18px}
+  .wordmark span{font-size:8px;letter-spacing:.16em}
+  .menu{width:42px;height:42px}
+  .nav-links{top:68px;padding:18px;background:rgba(248,248,246,.98);gap:6px;border-top:0}
+  .nav-links button:not(.nav-book){min-height:48px;padding:12px 2px;font-size:10px;letter-spacing:.13em}
+  .nav-links .nav-book{margin-top:8px;min-height:50px}
+
+  .hero{display:flex;flex-direction:column;min-height:auto}
+  .hero-copy{order:1;padding:48px 22px 34px}
+  .hero .eyebrow{font-size:8px;letter-spacing:.22em;margin-bottom:20px}
+  .hero h1{font-size:clamp(56px,17vw,76px);line-height:.86;letter-spacing:-.075em}
+  .hero-text{font-size:14px;line-height:1.72;margin:24px 0 22px;max-width:100%}
+  .hero-offer{max-width:none;padding:15px 0}
+  .hero-offer strong{font-size:34px}
+  .hero-offer span{font-size:8px;letter-spacing:.16em}
+  .hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin-top:18px}
+  .hero-actions .button{width:100%;min-height:52px}
+  .text-button{align-self:center;min-height:38px}
+  .hero-trust{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+  .hero-trust span{font-size:8px}
+  .hero-art{order:2;min-height:430px;height:68vh;max-height:590px}
+  .hero-art:before{inset:10px}
+  .hero-image-label{left:18px;bottom:18px;font-size:8px}
+
+  .section,.dark-section{padding:76px 22px}
+  .intro{min-height:0;padding-top:82px;padding-bottom:76px}
+  .intro:before{font-size:105px;top:28px;right:20px}
+  .intro h2,.section-heading h2,.gallery-heading h2,.bundle-intro h2,.selected-service h2,.faq h2{font-size:clamp(48px,13.5vw,70px);line-height:.89}
+  .intro>p:last-child{margin:25px 0 0;font-size:14px;line-height:1.78}
+  .intro-meta{margin-top:38px;grid-template-columns:1fr 1fr}
+
+  .signature{display:flex;flex-direction:column;min-height:0}
+  .signature-image{min-height:390px;height:54vh;max-height:500px;padding:18px}
+  .signature-copy{padding:68px 22px 76px}
+  .signature-copy h2{font-size:clamp(56px,15vw,78px);line-height:.86}
+  .signature-price{margin:28px 0 22px;padding:17px 0}
+  .signature-price strong{font-size:36px}
+  .signature-copy>p:not(.eyebrow){font-size:13px;line-height:1.75}
+  .signature-copy .button{width:100%;min-height:52px}
+
+  .dark-section{padding-top:82px;padding-bottom:82px}
+  .dark-section h2{font-size:clamp(50px,13.5vw,70px)}
+  .feature-grid{grid-template-columns:1fr;margin-top:52px}
+  .feature-grid>div,.feature-grid>div:nth-child(2),.feature-grid>div:last-child{padding:23px 0;min-height:0;border-right:0}
+  .feature-grid h3{font-size:27px;margin:13px 0 7px}
+  .feature-grid p{font-size:12px;line-height:1.7}
+
+  .services{padding-top:78px;padding-bottom:78px}
+  .section-heading.light{margin-bottom:40px}
+  .section-lede{font-size:12px;line-height:1.7;margin-top:18px}
+  .service-card,.service-card.featured{display:grid;grid-template-columns:25px minmax(0,1fr) 16px;gap:10px;min-height:0;padding:20px 0;margin:0;border-left:0;border-right:0}
+  .service-card.featured{padding:22px 18px;margin:0 -18px}
+  .service-card.featured:after{right:18px;top:0;font-size:7px;padding:7px 8px}
+  .service-number{font-size:8px;padding-top:4px}
+  .service-title{display:block;padding-right:68px}
+  .service-title h3{font-size:19px;line-height:1.15}
+  .service-title strong{display:block;font-size:15px;margin-top:5px}
+  .service-main p{font-size:11px;line-height:1.5;margin:8px 0 5px}
+  .service-main small{font-size:8px;letter-spacing:.13em}
+  .service-card .service-arrow{grid-column:3;grid-row:1;align-self:start;margin-top:3px}
+  .service-card .popular{display:none}
+
+  .gallery-section{padding:78px 18px}
+  .gallery-heading{display:block;padding:0;margin-bottom:34px}
+  .gallery-heading>p{font-size:12px;line-height:1.7;margin-top:18px}
+  .editorial-gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:240px repeat(3,150px);gap:7px;margin:0}
+  .editorial-gallery .gallery-item-1{grid-column:1 / 3;grid-row:1}
+  .editorial-gallery .gallery-item-2{grid-column:1 / 2;grid-row:2}
+  .editorial-gallery .gallery-item-3{grid-column:2 / 3;grid-row:2}
+  .editorial-gallery .gallery-item-4{grid-column:1 / 3;grid-row:3}
+  .editorial-gallery .gallery-item-5{grid-column:1 / 2;grid-row:4}
+  .editorial-gallery .gallery-item-6{grid-column:2 / 3;grid-row:4}
+  .editorial-gallery .gallery-item-7{display:none}
+
+  .bundles{display:block;padding:78px 22px}
+  .bundle-intro{margin-bottom:36px}
+  .bundle-card{min-height:0;padding:20px 0}
+  .bundle-card h3{font-size:16px}
+  .bundle-card p{font-size:9px;line-height:1.4}
+  .bundle-price strong{font-size:21px}
+
+  .selected-service{padding:76px 22px}
+  .selected-service-inner{display:flex;flex-direction:column;align-items:stretch;padding-top:34px;gap:30px}
+  .selected-service h2{font-size:clamp(50px,13.5vw,70px)}
+  .selected-service-inner>div:first-child>p:last-child{font-size:12px;line-height:1.7;margin-top:18px}
+  .selected-service-action{width:100%;min-width:0}
+  .selected-service-action .button{width:100%;min-height:52px}
+
+  .loyalty{padding:96px 22px}
+  .loyalty h2{font-size:clamp(56px,15vw,80px)}
+  .loyalty>p:not(.eyebrow){font-size:13px;line-height:1.75}
+  .loyalty .button{width:100%;min-height:52px}
+
+  .faq{display:block;padding:78px 22px}
+  .faq .section-heading{margin-bottom:40px}
+  .faq details{padding:20px 0}
+  .faq summary{font-size:13px}
+  .faq details p{font-size:12px;line-height:1.7}
+
+  .book{display:block;padding:80px 22px 92px}
+  .book h2{font-size:clamp(58px,15vw,82px)}
+  .book>div>p:last-child{font-size:13px;line-height:1.7}
+  .book-actions{width:100%;align-items:stretch;margin-top:34px}
+  .book-actions .button{width:100%;min-height:52px}
+  .gift-button{justify-content:center;min-height:42px}
+
+  .mobile-booking-bar{padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:12px}
+  .mobile-booking-bar div{max-width:56vw}
+  .mobile-booking-bar button{min-height:48px;padding:11px 14px}
+  footer{padding:38px 22px 28px}
+}
+@media(min-width:801px){
+  .hero,.signature,.dark-section,.services,.gallery-section,.bundles,.faq,.book{isolation:isolate}
+}
