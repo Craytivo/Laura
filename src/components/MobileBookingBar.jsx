@@ -9,6 +9,6 @@ export function MobileBookingBar({ selected, fallback, onBook }){
    <strong>{service.price} · {service.duration}</strong>
    <small>Private · Online booking</small>
   </div>
-  <button aria-label={`Book a ${service.name} appointment`} onClick={onBook}>Book <ArrowRight size={16}/></button>
+  <button aria-label={`Book a ${service.name} appointment`} onClick={onBook}>Book now <ArrowRight size={16}/></button>
  </div>
 }
