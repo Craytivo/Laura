@@ -3,7 +3,6 @@ import { site } from "./data/site";
 import { services } from "./data/services";
 import { bundles } from "./data/bundles";
 import { images } from "./data/images";
-import { buildBookingUrl } from "./config/booking";
 import { useReveal } from "./hooks/useReveal";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
@@ -20,10 +19,12 @@ import { FinalCTA } from "./components/FinalCTA";
 import { MobileBookingBar } from "./components/MobileBookingBar";
 import { Footer } from "./components/Footer";
 
+const BOOKING_URL="https://rusugar.as.me/schedule/36a17782?utm_source=website&utm_medium=website&utm_content=book_now";
+
 export default function App(){
  const [open,setOpen]=React.useState(false),[selected,setSelected]=React.useState(null);
  useReveal();
- const book=React.useCallback(()=>window.open(buildBookingUrl(),"_blank","noopener,noreferrer"),[]);
+ const book=React.useCallback(()=>window.open(BOOKING_URL,"_blank","noopener,noreferrer"),[]);
  const navigate=React.useCallback(id=>{document.getElementById(id)?.scrollIntoView({behavior:"smooth"});setOpen(false)},[]);
  const selectService=React.useCallback(service=>{setSelected(service);requestAnimationFrame(()=>document.getElementById("services")?.scrollIntoView({behavior:"smooth",block:"start"}))},[]);
  const signature=services[0];
