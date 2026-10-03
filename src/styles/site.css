@@ -1,7 +1,7 @@
 /* RU Sugaring — editorial beauty studio visual system */
 :root{
   --ivory:#F7F3EE;--cream:#EFE8DF;--sand:#E3D7CB;--clay:#B69B87;
-  --brown:#3D3732;--brown-soft:#625A53;--taupe:#877B71;--white:#FCFAF7;--line:#D9CEC3;
+  --brown:#3D3732;--brown-soft:#625A53;--taupe:#877B71;--white:#FCFAF7;--line:#D9CEC3;--radius-sm:10px;--radius-md:16px;--radius-lg:24px;
   --font-body:"DM Sans",sans-serif;--font-display:"Cormorant Garamond",serif;
   color:var(--brown);background:var(--ivory);font-family:var(--font-body);font-synthesis:none;text-rendering:optimizeLegibility;line-height:1.65;
 }
@@ -10,14 +10,14 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}.site{
 .eyebrow{margin:0 0 24px;font-size:10px;line-height:1.4;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe)}
 .hero h1,.section h2,.dark-section h2,.loyalty h2,.book h2,.signature-copy h2{margin:0;color:var(--brown);font-family:var(--font-body);font-weight:500;line-height:.95;letter-spacing:-.045em}
 .hero h1 em,.section h2 em,.dark-section h2 em,.loyalty h2 em,.book h2 em,.signature-copy h2 em,.gallery-heading h2 em{font-family:var(--font-display);font-weight:400;font-style:italic;letter-spacing:-.025em}
-.section h2,.dark-section h2{font-size:68px}.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:0 28px;border-radius:0;font-size:11px;line-height:1;font-weight:600;text-transform:uppercase;letter-spacing:.08em;transition:background .22s ease,transform .22s ease,box-shadow .22s ease}
+.section h2,.dark-section h2{font-size:68px}.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:0 28px;border-radius:12px;font-size:11px;line-height:1;font-weight:600;text-transform:uppercase;letter-spacing:.08em;transition:background .22s ease,transform .22s ease,box-shadow .22s ease}
 .button-dark{background:var(--brown);color:var(--ivory)}.button-light{background:var(--ivory);color:var(--brown)}.button:hover{transform:translateY(-2px)}.button-dark:hover{background:#2f2a26;box-shadow:0 10px 28px rgba(61,55,50,.14)}.button-light:hover{background:#fff}
 .text-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:0 0 4px;border-bottom:1px solid var(--brown);font-size:10px;line-height:1.4;font-weight:600;text-transform:uppercase;letter-spacing:.1em;transition:color .2s ease,border-color .2s ease}.text-button:hover{color:var(--taupe);border-color:var(--taupe)}
 .nav{position:sticky;top:0;z-index:40;height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(247,243,238,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
 .wordmark{display:flex;align-items:baseline;gap:5px;padding:0;text-align:left}.wordmark strong{font-size:18px;line-height:1;font-weight:600;letter-spacing:-.03em}.wordmark span,.footer-brand span{margin:0;font-size:8px;line-height:1.2;font-weight:500;letter-spacing:.22em}
 .nav-links{display:flex;align-items:center;gap:32px}.nav-links nav{display:flex;align-items:center;gap:32px}.nav-links button:not(.nav-book){position:relative;padding:0;font-size:11px;line-height:1;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--brown-soft)}
 .nav-links button:not(.nav-book):after{content:"";position:absolute;left:0;bottom:-8px;width:100%;height:1px;background:var(--brown);transform:scaleX(0);transform-origin:right;transition:transform .22s ease}.nav-links button:not(.nav-book):hover:after{transform:scaleX(1);transform-origin:left}
-.nav-book{min-height:42px!important;padding:0 22px!important;background:var(--brown)!important;color:var(--ivory)!important;display:inline-flex;align-items:center;gap:9px}.menu,.nav-mobile-meta,.nav-mobile-book{display:none}
+.nav-book{border-radius:12px!important;min-height:42px!important;padding:0 22px!important;background:var(--brown)!important;color:var(--ivory)!important;display:inline-flex;align-items:center;gap:9px}.menu,.nav-mobile-meta,.nav-mobile-book{display:none}
 .section{padding:128px 48px}.section-heading{max-width:1200px;margin:0 auto}.section-heading.light{margin-bottom:64px}.section-lede{max-width:560px;margin-top:28px;color:var(--brown-soft);font-size:15px;line-height:1.7}
 .hero{min-height:calc(100vh - 82px);display:grid;grid-template-columns:52% 48%;background:var(--ivory)}.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:80px 72px 80px 10vw}.hero h1{font-size:88px;max-width:650px}.hero-text{max-width:410px;margin:28px 0 0;color:var(--brown-soft);font-size:16px;line-height:1.7}
 .hero-offer{display:flex;align-items:center;gap:18px;max-width:430px;margin-top:28px;padding:14px 18px;background:rgba(239,232,223,.65);border:1px solid var(--line);border-left:3px solid var(--clay)}.hero-offer-price,.hero-offer-service{display:flex;flex-direction:column}.hero-offer-price strong{font-family:var(--font-display);font-size:48px;line-height:.9;font-weight:500;letter-spacing:-.04em}.hero-offer-price span,.hero-offer-service span{color:var(--taupe);font-size:9px;line-height:1.3;letter-spacing:.14em;text-transform:uppercase}.hero-offer-service{gap:3px;padding-left:18px;border-left:1px solid var(--line)}.hero-offer-service b{font-size:12px;line-height:1.2;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
@@ -59,3 +59,23 @@ footer{display:grid;grid-template-columns:1fr auto auto;gap:40px;align-items:cen
 }
 @media(min-width:801px){.hero-art-frame{width:min(100%,620px);margin-left:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}.hero-art .hero-photo,.gallery-photo{transition:none!important}}
+
+/* Soft beauty-studio surfaces */
+.hero-art-frame,.signature-image,.gallery-item,.hero-offer,.chosen-pill,.popular,
+.service-card,.bundle-card,.button,.nav-book,.mobile-booking-bar button{
+  border-radius:16px;
+}
+.hero-art-frame,.signature-image{overflow:hidden}
+.hero-art-frame:after{border-radius:12px}
+.hero-offer{box-shadow:0 8px 28px rgba(61,55,50,.05)}
+.service-card{overflow:hidden}
+.service-card.featured{box-shadow:inset 3px 0 0 var(--clay),0 8px 28px rgba(61,55,50,.04)}
+.gallery-item{border-radius:18px}
+.bundle-card{border-radius:14px}
+@media(max-width:800px){
+ .hero-art-frame{border-radius:18px}
+ .signature-image{border-radius:18px}
+ .hero-offer{border-radius:14px}
+ .service-card{border-radius:14px}
+ .button,.nav-book,.mobile-booking-bar button{border-radius:12px}
+}
