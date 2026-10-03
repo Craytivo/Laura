@@ -39,6 +39,6 @@ export default function App(){
   <BookingSummary selected={selected} onBook={book} onNavigate={navigate}/>
   <Loyalty service={signature} loyalty={site.loyalty} onSelect={selectService}/>
   <FAQ items={site.faq}/>
-  <FinalCTA onBook={book}/>
+  <FinalCTA onBook={book} onNavigate={navigate}/>
  </main><MobileBookingBar selected={selected} fallback={signature} onBook={book}/><Footer business={site} onNavigate={navigate}/></div>;
 }
