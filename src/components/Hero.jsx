@@ -1,18 +1,23 @@
 import React from "react";
 import { ArrowRight, Check } from "lucide-react";
+import { Card, CardBody, Chip } from "@heroui/react";
 import { Button } from "./Button";
-import { ResponsiveImage } from "./ResponsiveImage";
 
-export function Hero({image,service,business,onBook,onNavigate}){
+export function Hero({service,business,onBook,onNavigate}){
  return <section id="home" className="hero">
   <div className="hero-copy">
+   <div className="hero-monogram" aria-hidden="true">RU</div>
+   <div className="hero-kicker"><Chip size="sm" variant="flat" className="hero-chip">PRIVATE STUDIO</Chip><span>EDMONTON · SUGARING</span></div>
    <p className="eyebrow">{business.heroEyebrow.toUpperCase()}</p>
    <h1>Smooth skin.<br/><em>Simple.</em></h1>
    <p className="hero-text">{business.description}</p>
-   <div className="hero-offer">
-    <div className="hero-offer-price"><strong>{service.price}</strong><span>STARTING WITH</span></div>
-    <div className="hero-offer-service"><b>{service.name}</b><span>{service.duration}</span></div>
-   </div>
+   <Card className="hero-offer" shadow="none">
+    <CardBody className="hero-offer-body">
+     <div className="hero-offer-price"><strong>{service.price}</strong><span>STARTING WITH</span></div>
+     <div className="hero-offer-service"><b>{service.name}</b><span>{service.duration}</span></div>
+     <Button onClick={onBook} className="hero-offer-button">Book <ArrowRight size={15}/></Button>
+    </CardBody>
+   </Card>
    <div className="hero-actions">
     <Button onClick={onBook}>Book your {service.name} <ArrowRight size={17}/></Button>
     <button className="text-button" onClick={()=>onNavigate("services")}>View all services <ArrowRight size={14}/></button>
@@ -21,13 +26,14 @@ export function Hero({image,service,business,onBook,onNavigate}){
     {business.trust.map(item=><span key={item}><Check size={14}/> {item}</span>)}
    </div>
   </div>
-  <div className="hero-art">
-   <div className="hero-art-index">01 <span>THE STUDIO</span></div>
+  <div className="hero-art" aria-hidden="true">
    <div className="hero-art-frame">
-    <ResponsiveImage image={image} className="real-image hero-photo" fetchPriority="high" loading="eager" sizes="(max-width: 800px) 100vw, 50vw"/>
-    <div className="hero-image-label">RU SUGARING · EDMONTON</div>
+    <div className="hero-art-inner">
+     <div className="hero-art-copy"><span>THE RU EXPERIENCE</span><strong>Private.<br/><em>Personal.</em></strong><small>EDMONTON</small></div>
+     <div className="hero-art-orbit"><span>RU</span></div>
+    </div>
    </div>
-   <div className="hero-art-note">PRIVATE / PERSONAL / EDMONTON</div>
+   <div className="hero-art-note">SUGARING / PRIVATE / PERSONAL</div>
   </div>
  </section>;
 }
