@@ -3,7 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Card, CardBody, Chip } from "@heroui/react";
 import { Button } from "./Button";
 
-export function Hero({service,business,onBook,onNavigate}){
+export function Hero({image,service,business,onBook,onNavigate}){
  return <section id="home" className="hero">
   <div className="hero-copy">
    <div className="hero-monogram" aria-hidden="true">RU</div>
