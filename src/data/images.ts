@@ -6,6 +6,5 @@ export const images: SiteImage[] = [
   { src:"/images/IMG_2545.jpeg", alt:"RU Sugaring studio detail", priority:false },
   { src:"/images/IMG_2605.jpeg", alt:"RU Sugaring studio detail", priority:false },
   { src:"/images/IMG_2606.jpeg", alt:"RU Sugaring studio detail", priority:false },
-  { src:"/images/IMG_2607.jpeg", alt:"RU Sugaring studio detail", priority:false },
-  { src:"/images/IMG_2610.jpeg", alt:"RU Sugaring studio detail", priority:false }
+  { src:"/images/IMG_2607.jpeg", alt:"RU Sugaring studio detail", priority:false }
 ];
