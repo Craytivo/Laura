@@ -824,3 +824,367 @@ footer{
     padding-bottom:90px;
   }
 }
+
+
+/* =========================================================
+   Second refinement — quieter hierarchy, stronger art direction
+   ========================================================= */
+
+/* Hero: establish a clear reading sequence */
+.hero-copy{
+  justify-content:center;
+  padding-left:clamp(48px,8vw,120px);
+}
+.hero-kicker{
+  align-items:center;
+  gap:11px;
+  margin-bottom:24px;
+}
+.hero-kicker-number{
+  color:var(--color-clay);
+  font-family:var(--font-display);
+  font-size:15px;
+  line-height:1;
+}
+.hero-kicker>span:last-child{
+  color:var(--color-taupe);
+  font-size:7px;
+  letter-spacing:.2em;
+}
+.hero-copy>.eyebrow{
+  margin-bottom:14px;
+  font-size:8px;
+}
+.hero h1{
+  font-size:clamp(78px,7.1vw,104px);
+  line-height:.84;
+}
+.hero-text{
+  max-width:400px;
+  margin-top:30px;
+}
+.hero-offer{
+  position:relative;
+  margin-top:32px;
+  border-radius:0!important;
+  border-left:1px solid var(--color-brown)!important;
+  background:transparent!important;
+}
+.hero-offer-body{
+  min-height:74px;
+  padding:12px 14px!important;
+  justify-content:flex-start;
+}
+.hero-offer-price{
+  flex-basis:82px;
+  min-width:82px;
+}
+.hero-offer-price strong{
+  font-size:44px;
+}
+.hero-offer-service{
+  align-items:flex-start!important;
+  padding-left:20px;
+  text-align:left;
+}
+.hero-offer-service b,
+.hero-offer-service span{
+  text-align:left;
+}
+.hero-offer-service b{
+  font-family:var(--font-display);
+  font-size:18px;
+  font-weight:500;
+  letter-spacing:-.01em;
+  text-transform:none;
+}
+.hero-offer-service span{
+  font-size:7px;
+  letter-spacing:.16em;
+}
+.hero-offer-button{
+  border-radius:0!important;
+  min-height:38px!important;
+  border:1px solid var(--color-brown)!important;
+  background:var(--color-brown)!important;
+}
+.hero-actions{
+  margin-top:24px;
+}
+.hero-actions .button{
+  min-height:50px;
+  box-shadow:none!important;
+}
+.hero-actions .text-button{
+  min-height:38px;
+}
+.hero-trust{
+  max-width:500px;
+  margin-top:22px;
+  padding-top:15px;
+}
+.hero-trust span{
+  font-size:9px;
+}
+.hero-scroll{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  width:max-content;
+  margin-top:26px;
+  padding:0;
+  color:var(--color-taupe);
+  font-size:7px;
+  line-height:1;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.hero-scroll i{
+  position:relative;
+  display:block;
+  width:42px;
+  height:1px;
+  background:var(--color-line);
+}
+.hero-scroll i:after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:-2px;
+  width:5px;
+  height:5px;
+  border-top:1px solid var(--color-brown);
+  border-right:1px solid var(--color-brown);
+  transform:rotate(45deg);
+}
+.hero-scroll:hover{
+  color:var(--color-brown);
+}
+.hero-scroll:hover i{
+  background:var(--color-brown);
+}
+
+/* Photography becomes the dominant visual object */
+.hero-art-frame{
+  border-color:transparent;
+}
+.hero-art-frame:after{
+  inset:24px;
+  border-color:rgba(252,250,247,.62);
+}
+.hero-art-wash{
+  background:linear-gradient(145deg,rgba(247,243,238,.64) 0%,rgba(239,232,223,.25) 45%,rgba(61,55,50,.13) 100%);
+}
+.hero-art-copy{
+  left:7%;
+  bottom:7%;
+}
+.hero-art-copy strong{
+  font-size:clamp(38px,4.2vw,58px);
+}
+.hero-art-orbit{
+  width:96px;
+  height:96px;
+  background:rgba(252,250,247,.1);
+}
+.hero-art-note{
+  font-size:7px;
+}
+
+/* Services: introduce a proper editorial header line */
+.services .section-heading{
+  position:relative;
+  margin-bottom:42px;
+}
+.services .section-heading:after{
+  content:"11 SERVICES · ONLINE BOOKING";
+  position:absolute;
+  right:0;
+  bottom:9px;
+  color:var(--color-taupe);
+  font-size:7px;
+  line-height:1;
+  letter-spacing:.18em;
+}
+.services .service-list{
+  border-top:1px solid var(--color-brown);
+}
+.services .service-card{
+  grid-template-columns:minmax(0,1fr) auto;
+}
+.services .service-select-area{
+  padding-left:18px;
+}
+.services .service-card.featured .service-select-area{
+  padding-left:20px;
+}
+.services .service-number{
+  color:var(--color-clay);
+  font-family:var(--font-display);
+  font-size:14px;
+}
+.services .service-title{
+  gap:14px;
+}
+.services .service-title h3{
+  font-size:24px;
+}
+.services .service-main small{
+  display:inline-block;
+  margin-top:3px;
+}
+.services .service-meta{
+  padding-right:18px;
+}
+.services .service-meta .popular{
+  border-radius:0;
+  min-height:22px;
+  padding:0 8px;
+  background:transparent;
+  color:var(--color-taupe);
+  border-color:var(--color-line);
+  font-size:7px;
+}
+.services .service-book-link{
+  opacity:.72;
+}
+.services .service-card:hover .service-book-link,
+.services .service-card.selected .service-book-link{
+  opacity:1;
+}
+
+/* Signature: let the image and copy breathe into one composition */
+.signature-image{
+  padding:32px;
+  background:var(--color-cream);
+}
+.signature-copy{
+  padding-left:clamp(56px,8vw,110px);
+  padding-right:clamp(56px,8vw,110px);
+}
+.signature-copy h2{
+  font-size:clamp(54px,4.8vw,68px);
+}
+.signature-price{
+  margin-top:34px;
+}
+.signature-details{
+  border-top:0;
+  padding-top:0;
+}
+.signature-details:before{
+  margin-bottom:8px;
+}
+
+/* Dark section: fewer competing lines, stronger typographic contrast */
+.dark-section .section-heading{
+  max-width:900px;
+}
+.dark-section h2{
+  max-width:780px;
+}
+.feature-grid{
+  gap:0;
+}
+.feature-grid>div{
+  padding-right:42px;
+}
+.feature-grid h3{
+  font-family:var(--font-display);
+  font-size:27px;
+}
+
+/* Bundles + FAQ become quieter editorial lists */
+.bundle-card{
+  border-radius:0;
+}
+.bundle-card:hover{
+  padding-left:8px;
+}
+.bundle-book-link{
+  border-radius:0!important;
+}
+.faq details{
+  padding:27px 0;
+}
+.faq summary span{
+  font-family:var(--font-display);
+  font-size:23px;
+  font-weight:400;
+}
+
+/* Mobile keeps the hierarchy without importing desktop decoration */
+@media(max-width:800px){
+  .hero-copy{
+    padding-left:22px;
+  }
+  .hero-kicker{
+    margin-bottom:21px;
+  }
+  .hero-copy>.eyebrow{
+    margin-bottom:12px;
+  }
+  .hero h1{
+    font-size:58px;
+    line-height:.88;
+  }
+  .hero-text{
+    margin-top:21px;
+  }
+  .hero-offer{
+    margin-top:23px;
+  }
+  .hero-offer-body{
+    min-height:68px;
+  }
+  .hero-offer-service b{
+    font-size:16px;
+  }
+  .hero-actions{
+    margin-top:22px;
+  }
+  .hero-trust{
+    margin-top:20px;
+  }
+  .hero-scroll{
+    display:none;
+  }
+  .hero-art-frame:after{
+    inset:8px;
+  }
+  .services .section-heading{
+    margin-bottom:27px;
+  }
+  .services .section-heading:after{
+    position:static;
+    display:block;
+    margin-top:15px;
+  }
+  .services .service-select-area,
+  .services .service-card.featured .service-select-area{
+    padding-left:0;
+  }
+  .services .service-number{
+    font-size:12px;
+  }
+  .services .service-title h3{
+    font-size:20px;
+  }
+  .signature-image{
+    padding:10px 22px 0;
+  }
+  .signature-copy{
+    padding-left:22px;
+    padding-right:22px;
+  }
+  .feature-grid h3{
+    font-size:24px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-scroll i,
+  .hero-scroll i:after{
+    transition:none!important;
+  }
+}
