@@ -11,10 +11,20 @@ export const bookingConfig: BookingConfig = {
 };
 
 export function buildBookingUrl(): string {
-  const url = new URL(bookingConfig.baseUrl);
+  let url: URL;
+
+  try {
+    url = new URL(bookingConfig.baseUrl);
+  } catch {
+    throw new Error("Invalid RU Sugaring booking URL.");
+  }
+
+  if (!["https:", "http:"].includes(url.protocol)) {
+    throw new Error("RU Sugaring booking URL must use HTTP(S).");
+  }
 
   Object.entries(bookingConfig.query).forEach(([key, value]) => {
-    url.searchParams.set(key, value);
+    if (key && value) url.searchParams.set(key, value);
   });
 
   return url.toString();
