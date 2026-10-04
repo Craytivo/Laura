@@ -27,13 +27,6 @@ export interface SiteImage {
   priority: boolean;
 }
 
-export interface LoyaltyConfig {
-  sessions: number;
-  discount: string;
-  heading: [string, string];
-  body: string;
-}
-
 export interface SiteConfig {
   name: string;
   shortName: string;
@@ -45,7 +38,6 @@ export interface SiteConfig {
   experience: string;
   why: Array<[string, string]>;
   signature: { kicker: string; label: string; details: string[] };
-  loyalty: LoyaltyConfig;
   faq: Array<[string, string]>;
   nav: string[];
   footer: string;
