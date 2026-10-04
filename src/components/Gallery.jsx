@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { GalleryItem } from "./gallery/GalleryItem";
 
 export function Gallery({ images }) {
-  const galleryImages = images.slice(2, 6);
+  const galleryImages = images.filter(image => image.role === "gallery").slice(0, 4);
 
   return (
     <section className="gallery-section" data-reveal>
