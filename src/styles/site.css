@@ -668,7 +668,7 @@ footer{display:grid;grid-template-columns:1fr auto auto;gap:40px;align-items:cen
   position:relative;
 }
 .bundles:before{
-  content:"05";
+  content:"08";
   position:absolute;
   top:48px;
   right:5vw;
