@@ -1,6 +1,6 @@
 import type { Service, ServiceId } from "../types";
 
-export const services: Service[] = [
+export const services = [
   { id:"brazilian", name:"Brazilian", price:"$45", duration:"1 hour", description:"Smooth, personalized Brazilian sugaring with care and comfort in mind.", badge:"Most booked", featured:true },
   { id:"bikini", name:"Bikini", price:"$35", duration:"35 min", description:"Hair removal from the front and outer bikini line, customized to your preferred shape and coverage." },
   { id:"underarms", name:"Underarms", price:"$20", duration:"25 min", description:"Complete hair removal of the underarm area." },
@@ -12,15 +12,9 @@ export const services: Service[] = [
   { id:"fingers-toes", name:"Fingers / Toes", price:"$10", duration:"25 min", description:"A simple add-on for fingers or toes." },
   { id:"full-face", name:"Full Face", price:"$25", duration:"30 min", description:"A smooth, fresh finish for the full face." },
   { id:"tailored-add-ons", name:"Tailored Add-ons", price:"$10+", duration:"15 min", description:"Personalize your service with carefully selected add-ons. Prices vary." }
-];
+] satisfies Service[];
 
-const featuredService = services.find(({ id }) => id === "brazilian");
-
-if (!featuredService) {
-  throw new Error("Featured Brazilian service is missing from the service catalog.");
-}
-
-export const brazilian: Service = featuredService;
+export const brazilian: Service = services.find(({ id }) => id === "brazilian")!;
 
 export function getService(id: ServiceId): Service {
   const service = services.find(item => item.id === id);
