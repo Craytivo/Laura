@@ -1188,3 +1188,147 @@ footer{
     transition:none!important;
   }
 }
+
+
+/* =========================================================
+   RU life layer — motion, touch, and quieter brand repetition
+   ========================================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-art-frame {
+    animation: ruHeroBreath 12s ease-in-out infinite alternate;
+  }
+
+  .hero-art-frame .hero-photo {
+    transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter .7s ease;
+  }
+
+  .hero-art-frame:hover .hero-photo {
+    transform: scale(1.025);
+    filter: saturate(.98);
+  }
+
+  .hero-art-orbit {
+    transition: transform .8s cubic-bezier(.2,.8,.2,1), background .4s ease;
+  }
+
+  .hero-art-frame:hover .hero-art-orbit {
+    transform: rotate(8deg) scale(1.04);
+    background: rgba(252,250,247,.16);
+  }
+
+  .service-card .service-number {
+    transition: color .25s ease, transform .35s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .service-card .service-title h3 {
+    transition: transform .35s cubic-bezier(.2,.8,.2,1), color .25s ease;
+  }
+
+  .service-card .service-book-link {
+    transition: opacity .25s ease, background .25s ease, color .25s ease,
+      border-color .25s ease, transform .35s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .service-card:hover .service-number,
+  .service-card.selected .service-number {
+    color: var(--color-brown);
+    transform:translateX(4px);
+  }
+
+  .service-card:hover .service-title h3,
+  .service-card.selected .service-title h3 {
+    transform:translateX(3px);
+  }
+
+  .service-card:hover .service-book-link,
+  .service-card.selected .service-book-link {
+    transform:translateX(3px);
+  }
+
+  .gallery-item .gallery-photo {
+    transition: transform .9s cubic-bezier(.2,.7,.2,1), filter .6s ease;
+  }
+
+  .gallery-item:hover .gallery-photo {
+    transform:scale(1.035) translateY(-2px);
+  }
+
+  .bundle-card h3,
+  .bundle-card svg {
+    transition:transform .35s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .bundle-card:hover h3 {
+    transform:translateX(3px);
+  }
+
+  .bundle-card:hover svg {
+    transform:translate(4px,-2px);
+  }
+
+  .faq details summary span {
+    transition:transform .3s ease, color .25s ease;
+  }
+
+  .faq details[open] summary span {
+    transform:rotate(45deg);
+    color:var(--color-brown);
+  }
+
+  .brand-moment-mark {
+    transition:transform .6s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .brand-moment-gallery:hover .brand-moment-mark {
+    transform:rotate(-6deg) scale(1.05);
+  }
+}
+
+@keyframes ruHeroBreath {
+  from { transform:scale(1); }
+  to { transform:scale(1.008); }
+}
+
+/* The RU mark behaves like a signature, not decoration. */
+.brand-moment-gallery {
+  position:relative;
+}
+
+.brand-moment-gallery:after {
+  content:"RU";
+  position:absolute;
+  right:0;
+  bottom:-3px;
+  color:var(--color-clay);
+  font-family:var(--font-display);
+  font-size:clamp(54px,6vw,88px);
+  line-height:.75;
+  letter-spacing:-.06em;
+  opacity:.13;
+  pointer-events:none;
+}
+
+@media(max-width:800px) {
+  .brand-moment-gallery:after {
+    font-size:58px;
+    bottom:0;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .hero-art-frame,
+  .hero-art-frame .hero-photo,
+  .hero-art-orbit,
+  .service-card .service-number,
+  .service-card .service-title h3,
+  .service-card .service-book-link,
+  .gallery-item .gallery-photo,
+  .bundle-card h3,
+  .bundle-card svg,
+  .faq details summary span,
+  .brand-moment-mark {
+    animation:none!important;
+    transition:none!important;
+  }
+}
