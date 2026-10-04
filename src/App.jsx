@@ -17,38 +17,38 @@ import { FinalCTA } from "./components/FinalCTA";
 import { MobileBookingBar } from "./components/MobileBookingBar";
 import { Footer } from "./components/Footer";
 
-export default function App(){
-  const [open,setOpen]=React.useState(false);
-  const [selected,setSelected]=React.useState(null);
+export default function App() {
+  const [open, setOpen] = React.useState(false);
+  const [selected, setSelected] = React.useState(null);
   useReveal();
 
-  const bookingUrl=React.useMemo(()=>buildBookingUrl(),[]);
-  const book=React.useCallback(()=>window.open(bookingUrl,"_blank","noopener,noreferrer"),[bookingUrl]);
-  const navigate=React.useCallback(id=>{
-    document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
+  const bookingUrl = React.useMemo(() => buildBookingUrl(), []);
+  const book = React.useCallback(() => window.open(bookingUrl, "_blank", "noopener,noreferrer"), [bookingUrl]);
+  const navigate = React.useCallback(id => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setOpen(false);
-  },[]);
-  const selectService=React.useCallback(service=>{
-    setSelected(current=>current?.id===service.id ? null : service);
-  },[]);
+  }, []);
+  const selectService = React.useCallback(service => {
+    setSelected(current => current?.id === service.id ? null : service);
+  }, []);
 
-  const signature=services[0];
+  const signature = services[0];
 
   return (
     <div className="site">
-      <Header open={open} onToggle={()=>setOpen(value=>!value)} onNavigate={navigate} onBook={book} business={site} service={signature}/>
+      <Header open={open} onToggle={() => setOpen(value => !value)} onNavigate={navigate} onBook={book} business={site} service={signature} />
       <main>
-        <Hero image={images[0]} service={signature} business={site} onBook={book} onNavigate={navigate}/>
-        <SignatureService image={images[1]} service={signature} business={site} onBook={book}/>
-        <WhySugaring features={site.why}/>
-        <Services services={services} selected={selected} onSelect={selectService} bookingUrl={bookingUrl}/>
-        <Gallery images={images}/>
-        <Bundles bundles={bundles} onSelect={selectService}/>
-        <FAQ items={site.faq}/>
-        <FinalCTA onBook={book} onNavigate={navigate}/>
+        <Hero image={images[0]} service={signature} business={site} onBook={book} onNavigate={navigate} />
+        <SignatureService image={images[1]} service={signature} business={site} onBook={book} />
+        <WhySugaring features={site.why} />
+        <Services services={services} selected={selected} onSelect={selectService} bookingUrl={bookingUrl} />
+        <Gallery images={images} />
+        <Bundles bundles={bundles} bookingUrl={bookingUrl} />
+        <FAQ items={site.faq} />
+        <FinalCTA onBook={book} onNavigate={navigate} />
       </main>
-      <MobileBookingBar selected={selected} fallback={signature} onBook={book}/>
-      <Footer business={site} onNavigate={navigate}/>
+      <MobileBookingBar selected={selected} fallback={signature} onBook={book} />
+      <Footer business={site} onNavigate={navigate} />
     </div>
   );
 }
