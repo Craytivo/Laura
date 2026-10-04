@@ -6,7 +6,6 @@ import { bundles } from "./data/bundles";
 import { images } from "./data/images";
 import { buildBookingUrl } from "./config/booking";
 import { useReveal } from "./hooks/useReveal";
-import { AppErrorBoundary } from "./components/AppErrorBoundary";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { SignatureService } from "./components/SignatureService";
@@ -20,50 +19,81 @@ import { MobileBookingBar } from "./components/MobileBookingBar";
 import { Footer } from "./components/Footer";
 
 export default function App(): React.ReactElement {
-  const [open, setOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<Service | null>(null);
+  const [isNavigationOpen, setIsNavigationOpen] = React.useState(false);
+  const [selectedService, setSelectedService] = React.useState<Service | null>(null);
+
   useReveal();
 
-  const bookingUrl = React.useMemo(() => buildBookingUrl(), []);
+  const bookingUrl = React.useMemo(buildBookingUrl, []);
+
   const book = React.useCallback(() => {
     window.open(bookingUrl, "_blank", "noopener,noreferrer");
   }, [bookingUrl]);
 
-  const navigate = React.useCallback((id: string) => {
+  const navigateTo = React.useCallback((id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setOpen(false);
+    setIsNavigationOpen(false);
   }, []);
 
-  const selectService = React.useCallback((service: Service) => {
-    setSelected(current => current?.id === service.id ? null : service);
+  const toggleService = React.useCallback((service: Service) => {
+    setSelectedService(current => current?.id === service.id ? null : service);
   }, []);
 
-  const signature = services.find(service => service.featured) ?? services[0];
+  const signatureService = services.find(service => service.featured) ?? services[0];
   const heroImage = images.find(image => image.role === "hero");
   const signatureImage = images.find(image => image.role === "signature");
   const galleryImages = images.filter(image => image.role === "gallery");
 
-  if (!signature || !heroImage || !signatureImage || galleryImages.length < 4) {
+  if (!signatureService || !heroImage || !signatureImage || galleryImages.length < 4) {
     throw new Error("RU Sugaring content configuration is incomplete.");
   }
 
+  const allGalleryImages = [heroImage, signatureImage, ...galleryImages];
+
   return (
-    <AppErrorBoundary>
-      <div className="site">
-        <Header open={open} onToggle={() => setOpen(value => !value)} onNavigate={navigate} onBook={book} business={site} service={signature} />
-        <main>
-          <Hero image={heroImage} service={signature} business={site} onBook={book} onNavigate={navigate} />
-          <SignatureService image={signatureImage} service={signature} business={site} onBook={book} />
-          <WhySugaring features={site.why} />
-          <Services services={services} selected={selected} onSelect={selectService} bookingUrl={bookingUrl} />
-          <Gallery images={[heroImage, signatureImage, ...galleryImages]} />
-          <Bundles bundles={bundles} bookingUrl={bookingUrl} />
-          <FAQ items={site.faq} />
-          <FinalCTA onBook={book} onNavigate={navigate} />
-        </main>
-        <MobileBookingBar selected={selected} fallback={signature} onBook={book} />
-        <Footer business={site} onNavigate={navigate} />
-      </div>
-    </AppErrorBoundary>
+    <div className="site">
+      <Header
+        open={isNavigationOpen}
+        onToggle={() => setIsNavigationOpen(value => !value)}
+        onNavigate={navigateTo}
+        onBook={book}
+        business={site}
+        service={signatureService}
+      />
+
+      <main>
+        <Hero
+          image={heroImage}
+          service={signatureService}
+          business={site}
+          onBook={book}
+          onNavigate={navigateTo}
+        />
+        <SignatureService
+          image={signatureImage}
+          service={signatureService}
+          business={site}
+          onBook={book}
+        />
+        <WhySugaring features={site.why} />
+        <Services
+          services={services}
+          selected={selectedService}
+          onSelect={toggleService}
+          bookingUrl={bookingUrl}
+        />
+        <Gallery images={allGalleryImages} />
+        <Bundles bundles={bundles} bookingUrl={bookingUrl} />
+        <FAQ items={site.faq} />
+        <FinalCTA onBook={book} onNavigate={navigateTo} />
+      </main>
+
+      <MobileBookingBar
+        selected={selectedService}
+        fallback={signatureService}
+        onBook={book}
+      />
+      <Footer business={site} onNavigate={navigateTo} />
+    </div>
   );
 }
