@@ -1,11 +1,16 @@
 import React from "react";
 import { ResponsiveImage } from "../ResponsiveImage";
 
+const labels = ["THE STUDIO", "THE DETAILS", "THE FEEL", "THE FINISH"];
+
 export function GalleryItem({ image, index, sizes }) {
   return (
-    <div className={"gallery-item gallery-item-" + (index + 1)}>
+    <figure className={"gallery-item gallery-item-" + (index + 1)}>
       <ResponsiveImage image={image} className="real-image gallery-photo" loading="lazy" sizes={sizes} />
-      <span className="gallery-index">0{index + 1}</span>
-    </div>
+      <figcaption>
+        <span>{String(index + 1).padStart(2, "0")}</span>
+        <strong>{labels[index]}</strong>
+      </figcaption>
+    </figure>
   );
 }
