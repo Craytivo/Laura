@@ -464,3 +464,363 @@ footer{display:grid;grid-template-columns:1fr auto auto;gap:40px;align-items:cen
   text-transform:uppercase;
   cursor:pointer;
 }
+
+
+/* =========================================================
+   Final visual direction — editorial / luxury service studio
+   ========================================================= */
+
+/* 01 — Hero: fewer competing signals, stronger hierarchy */
+.hero{
+  grid-template-columns:minmax(0,1.08fr) minmax(420px,.92fr);
+  min-height:calc(100svh - 82px);
+}
+.hero-copy{
+  padding-top:clamp(56px,8vh,96px);
+  padding-bottom:clamp(56px,8vh,96px);
+}
+.hero-kicker{
+  margin-bottom:30px;
+}
+.hero h1{
+  max-width:700px;
+  font-size:clamp(76px,7.6vw,108px);
+  letter-spacing:-.055em;
+}
+.hero-text{
+  max-width:430px;
+  margin-top:28px;
+  font-size:14px;
+}
+.hero-offer{
+  margin-top:34px;
+  max-width:500px;
+  box-shadow:none;
+}
+.hero-actions{
+  margin-top:28px;
+}
+.hero-actions .button{
+  min-width:210px;
+  min-height:52px;
+}
+.hero-trust{
+  margin-top:24px;
+  padding-top:18px;
+  border-top:1px solid var(--color-line);
+  max-width:500px;
+}
+.hero-art{
+  padding:40px 5vw 40px 1vw;
+}
+.hero-art-frame{
+  width:min(100%,560px);
+  height:min(82vh,700px);
+  min-height:560px;
+  border-radius:0!important;
+  box-shadow:none;
+}
+.hero-art-inner{
+  border-radius:0;
+}
+.hero-art-frame:after{
+  inset:18px;
+  border-radius:0;
+}
+.hero-art-orbit{
+  width:106px;
+  height:106px;
+}
+.hero-art-note{
+  right:2.5%;
+}
+
+/* 02 — Services: editorial price-list, not a card grid */
+.services{
+  background:var(--color-white);
+}
+.services .section-heading{
+  padding-bottom:8px;
+}
+.section-marker{
+  display:block;
+  max-width:var(--content-max);
+  margin:0 auto 18px;
+  color:var(--color-taupe);
+  font-size:7px;
+  line-height:1.2;
+  font-weight:600;
+  letter-spacing:.2em;
+}
+.services .service-list{
+  border-top:1px solid var(--color-brown);
+}
+.services .service-card{
+  min-height:112px;
+  border-radius:0;
+  border-bottom:1px solid var(--color-line);
+  box-shadow:none;
+  background:transparent;
+}
+.services .service-card:hover{
+  background:var(--color-cream);
+  transform:none;
+}
+.services .service-card.featured{
+  box-shadow:inset 2px 0 0 var(--color-clay);
+}
+.services .service-card.selected{
+  background:var(--color-cream);
+  box-shadow:inset 2px 0 0 var(--color-clay);
+}
+.services .service-select-area{
+  padding:20px 18px;
+}
+.services .service-card.featured .service-select-area{
+  padding-left:20px;
+}
+.services .service-title h3{
+  font-size:25px;
+  font-weight:500;
+  letter-spacing:-.035em;
+}
+.services .service-title strong{
+  font-family:var(--font-body);
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.04em;
+}
+.services .service-main p{
+  max-width:620px;
+  margin-top:9px;
+  font-size:12px;
+}
+.services .service-meta{
+  padding-right:18px;
+}
+.services .service-book-link{
+  border-radius:0!important;
+  min-height:34px!important;
+  padding:0 12px!important;
+  background:transparent!important;
+  color:var(--color-brown)!important;
+  border:1px solid var(--color-line);
+  box-shadow:none!important;
+}
+.services .service-book-link:hover{
+  background:var(--color-brown)!important;
+  border-color:var(--color-brown);
+  color:var(--color-ivory)!important;
+}
+.services .service-note{
+  margin-top:42px;
+}
+
+/* 03 — Make RU's visual language recur deliberately */
+.nav{
+  height:78px;
+}
+.wordmark strong{
+  font-family:var(--font-display);
+  font-size:22px;
+  font-weight:500;
+  letter-spacing:-.04em;
+}
+.wordmark span{
+  color:var(--color-taupe);
+}
+.signature-kicker,
+.gallery-rule-label,
+.section-marker{
+  letter-spacing:.2em;
+}
+.signature-copy:after,
+.hero-art:after{
+  font-family:var(--font-display);
+  font-size:10px;
+}
+.signature{
+  position:relative;
+}
+.signature:after{
+  content:"02";
+  position:absolute;
+  top:48px;
+  right:5vw;
+  color:var(--color-clay);
+  font-family:var(--font-display);
+  font-size:14px;
+  line-height:1;
+}
+.dark-section{
+  position:relative;
+}
+.dark-section:before{
+  content:"03";
+  position:absolute;
+  top:48px;
+  right:5vw;
+  color:rgba(247,243,238,.4);
+  font-family:var(--font-display);
+  font-size:14px;
+}
+.bundles{
+  position:relative;
+}
+.bundles:before{
+  content:"05";
+  position:absolute;
+  top:48px;
+  right:5vw;
+  color:var(--color-clay);
+  font-family:var(--font-display);
+  font-size:14px;
+}
+.faq{
+  position:relative;
+}
+.faq:before{
+  content:"06";
+  position:absolute;
+  top:48px;
+  right:5vw;
+  color:var(--color-clay);
+  font-family:var(--font-display);
+  font-size:14px;
+}
+.book{
+  position:relative;
+}
+.book:before{
+  content:"07";
+  position:absolute;
+  top:48px;
+  right:5vw;
+  color:rgba(61,55,50,.55);
+  font-family:var(--font-display);
+  font-size:14px;
+}
+
+/* 04 — Continuous vertical rhythm */
+.signature-copy{
+  padding-top:clamp(72px,8vw,110px);
+  padding-bottom:clamp(72px,8vw,110px);
+}
+.dark-section{
+  padding-top:112px;
+  padding-bottom:112px;
+}
+.feature-grid{
+  margin-top:68px;
+}
+.bundles,
+.faq{
+  padding-top:112px;
+  padding-bottom:112px;
+}
+.book{
+  padding-top:108px;
+  padding-bottom:108px;
+}
+footer{
+  padding-top:64px;
+}
+.section:not(.services):after,
+.gallery-section:after,
+.dark-section:after,
+.book:after{
+  opacity:.75;
+}
+
+/* Keep motion restrained: one hero movement, not five simultaneous floating elements */
+@media(min-width:801px){
+  .hero-copy>.hero-kicker,
+  .hero-copy>h1,
+  .hero-copy>.hero-text,
+  .hero-copy>.hero-offer,
+  .hero-copy>.hero-actions,
+  .hero-copy>.hero-trust{
+    animation:none!important;
+  }
+}
+
+@media(max-width:800px){
+  .nav{height:70px}
+  .hero{
+    min-height:auto;
+  }
+  .hero-copy{
+    padding-top:48px;
+    padding-bottom:38px;
+  }
+  .hero h1{
+    font-size:58px;
+    letter-spacing:-.05em;
+  }
+  .hero-text{
+    max-width:340px;
+    margin-top:20px;
+  }
+  .hero-offer{
+    margin-top:22px;
+  }
+  .hero-trust{
+    padding-top:15px;
+  }
+  .hero-art{
+    height:270px;
+    padding:10px 22px 0;
+  }
+  .hero-art-frame{
+    height:260px;
+    min-height:0;
+    border-radius:0!important;
+  }
+  .hero-art-frame:after{
+    inset:8px;
+  }
+  .section-marker{
+    margin-bottom:12px;
+  }
+  .services .service-card,
+  .services .service-card.featured{
+    border-radius:0;
+    min-height:0;
+  }
+  .services .service-select-area,
+  .services .service-card.featured .service-select-area{
+    padding-top:17px;
+    padding-bottom:17px;
+  }
+  .services .service-title h3{
+    font-size:20px;
+  }
+  .services .service-main p{
+    font-size:11px;
+  }
+  .signature:after,
+  .dark-section:before,
+  .bundles:before,
+  .faq:before,
+  .book:before{
+    top:28px;
+    right:22px;
+    font-size:11px;
+  }
+  .dark-section{
+    padding-top:82px;
+    padding-bottom:88px;
+  }
+  .feature-grid{
+    margin-top:44px;
+  }
+  .bundles,
+  .faq{
+    padding-top:82px;
+    padding-bottom:88px;
+  }
+  .book{
+    padding-top:82px;
+    padding-bottom:90px;
+  }
+}
