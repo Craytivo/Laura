@@ -1,7 +1,6 @@
 import React from "react";
 import { Button as HeroUIButton } from "@heroui/react";
-
-type HeroUIButtonProps = React.ComponentProps<typeof HeroUIButton>;
+import type { ButtonProps as HeroUIButtonProps } from "@heroui/react";
 
 export interface ButtonProps
   extends Omit<
