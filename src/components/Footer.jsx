@@ -1,2 +1,0 @@
-import React from "react";
-export function Footer({business,onNavigate}){return <footer><div className="footer-brand">{business.shortName}<span>SUGARING</span></div><p>{business.footer}</p><div className="footer-links"><button onClick={()=>onNavigate("services")}>Services</button><button onClick={()=>onNavigate("faq")}>FAQ</button><button onClick={()=>onNavigate("book")}>Book</button></div><small>© {new Date().getFullYear()} {business.name}</small></footer>}
