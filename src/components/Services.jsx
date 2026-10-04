@@ -12,7 +12,7 @@ export function Services({ services, selected, onSelect, bookingUrl }) {
       </SectionHeading>
       <div className="service-list">
         {services.map((service, index) => (
-          <ServiceCard key={service.id} service={service} index={index} selected={selected} onSelect={onSelect}/>
+          <ServiceCard key={service.id} service={service} index={index} selected={selected} onSelect={onSelect} bookingUrl={bookingUrl}/>
         ))}
       </div>
       <div className="service-book-row">
