@@ -7,7 +7,7 @@ export function ServiceCard({ service, index, selected, onSelect, bookingUrl }) 
   return (
     <article className={"service-card " + (service.featured ? "featured " : "") + (isSelected ? "selected" : "")}>
       <button className="service-select-area" type="button" onClick={() => onSelect(service)} aria-expanded={isSelected} aria-label={label}>
-        <div className="service-number">{String(index + 1).padStart(2, "0")}</div>
+        <div className="service-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</div>
         <div className="service-main">
           <div className="service-title"><h3>{service.name}</h3><strong>{service.price}</strong></div>
           <p>{service.description}</p>
