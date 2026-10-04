@@ -9,7 +9,7 @@ export function Gallery({ images }) {
     <section className="gallery-section" data-reveal>
       <div className="gallery-intro">
         <div className="gallery-title">
-          <div className="gallery-index-large" aria-hidden="true">03</div>
+          <div className="gallery-index-large" aria-hidden="true">05</div>
           <div>
             <p className="eyebrow">THE RU EDIT</p>
             <h2>A closer look<br /><em>at RU.</em></h2>
