@@ -1,9 +1,44 @@
 /* RU Sugaring — editorial beauty studio visual system */
-:root{
-  --ivory:#F7F3EE;--cream:#EFE8DF;--sand:#E3D7CB;--clay:#B69B87;
-  --brown:#3D3732;--brown-soft:#625A53;--taupe:#877B71;--white:#FCFAF7;--line:#D9CEC3;--radius-sm:10px;--radius-md:16px;--radius-lg:24px;
-  --font-body:"DM Sans",sans-serif;--font-display:"Cormorant Garamond",serif;
-  color:var(--brown);background:var(--ivory);font-family:var(--font-body);font-synthesis:none;text-rendering:optimizeLegibility;line-height:1.65;
+:root {
+  --ivory: #F7F3EE;
+  --cream: #EFE8DF;
+  --sand: #E3D7CB;
+  --clay: #B69B87;
+  --brown: #3D3732;
+  --brown-soft: #625A53;
+  --taupe: #877B71;
+  --white: #FCFAF7;
+  --line: #D9CEC3;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --content-max: 1200px;
+  --gutter: 48px;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --ease-standard: cubic-bezier(.2, .8, .2, 1);
+  --duration-standard: 350ms;
+
+  --font-body: "DM Sans", sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+
+  color: var(--brown);
+  background: var(--ivory);
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  line-height: 1.65;
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--ivory);color:var(--brown);font-family:var(--font-body);font-size:15px;line-height:1.65}
 button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}.site{overflow:hidden;background:var(--ivory)}main{background:var(--ivory)}[id]{scroll-margin-top:92px}:focus-visible{outline:2px solid var(--brown);outline-offset:4px}img{display:block;max-width:100%}
