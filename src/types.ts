@@ -21,10 +21,13 @@ export interface Bundle {
   description: string;
 }
 
+export type ImageRole = "hero" | "signature" | "gallery";
+
 export interface SiteImage {
   src: string;
   alt: string;
   priority: boolean;
+  role: ImageRole;
 }
 
 export interface SiteConfig {
