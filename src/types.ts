@@ -42,7 +42,7 @@ export interface SiteConfig {
   why: Array<[string, string]>;
   signature: { kicker: string; label: string; details: string[] };
   faq: Array<[string, string]>;
-  nav: string[];
+  nav: Array<{ label: string; id: string }>;
   footer: string;
 }
 
