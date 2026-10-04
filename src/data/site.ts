@@ -21,6 +21,6 @@ export const site: SiteConfig = {
     ["What should I do before my appointment?","Arrive with clean skin and avoid heavy lotions or oils on the area being sugared."],
     ["What if I need to cancel?","Booking and cancellation details will be listed here once the RU Sugaring policy is finalized."]
   ],
-  nav:["Services","Why sugaring","FAQ"],
+  nav:[{label:"Services",id:"services"},{label:"Why sugaring",id:"why"},{label:"FAQ",id:"faq"}],
   footer:"Edmonton, Alberta · Home-based sugaring studio"
 };
