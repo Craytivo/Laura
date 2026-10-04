@@ -10,7 +10,7 @@ export function Hero({ image, service, business, onBook, onNavigate }) {
   return (
     <section id="home" className="hero">
       <div className="hero-copy">
-        <div className="hero-monogram" aria-hidden="true">RU</div>
+        <img className="ru-monogram ru-monogram-hero" src="/images/ru-monogram.svg" alt="" aria-hidden="true" />
 
         <div className="hero-kicker">
           <span className="hero-kicker-number">01</span>
