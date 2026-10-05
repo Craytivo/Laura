@@ -32,8 +32,6 @@ export function Gallery({ images }) {
           />
         ))}
       </div>
-
-      </div>
     </section>
   );
 }
