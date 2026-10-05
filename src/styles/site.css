@@ -1872,3 +1872,32 @@ footer{
 .book-actions .gift-button{
   border-bottom:1px solid rgba(247,243,238,.55);
 }
+
+
+/* Site-wide contrast pass — keep the palette, strengthen secondary text. */
+:root{
+  --taupe:#6F655D;
+  --olive:#65674F;
+}
+
+/* Secondary text must remain readable on the dark footer. */
+footer>p,
+.footer-links+small{
+  color:var(--cream);
+}
+
+/* Remove remaining lower-contrast hard-coded text colors. */
+.book .eyebrow{
+  color:var(--cream);
+}
+.book>div>p:last-child{
+  color:var(--cream);
+}
+
+/* Active/identity accent remains subtle but readable on light surfaces. */
+.service-card.selected .service-select,
+.signature-kicker span:first-child,
+.signature-details:before,
+.hero-trust svg{
+  color:var(--olive);
+}
