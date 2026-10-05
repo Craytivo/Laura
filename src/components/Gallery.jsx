@@ -6,7 +6,7 @@ export function Gallery({ images }) {
   const galleryImages = images.filter(image => image.role === "gallery").slice(0, 4);
 
   return (
-    <section className="gallery-section" data-reveal>
+    <section id="gallery" className="gallery-section" data-reveal>
       <div className="gallery-intro">
         <div className="gallery-title">
           <div className="gallery-index-large" aria-hidden="true">05</div>
