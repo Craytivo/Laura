@@ -6,6 +6,8 @@ import { bundles } from "./data/bundles";
 import { images } from "./data/images";
 import { buildBookingUrl } from "./config/booking";
 import { useReveal } from "./hooks/useReveal";
+import { useScrollStory } from "./hooks/useScrollStory";
+import { useTactileInteraction } from "./hooks/useTactileInteraction";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { SignatureService } from "./components/SignatureService";
@@ -17,12 +19,15 @@ import { FAQ } from "./components/FAQ";
 import { FinalCTA } from "./components/FinalCTA";
 import { MobileBookingBar } from "./components/MobileBookingBar";
 import { Footer } from "./components/Footer";
+import { SectionProgress } from "./components/SectionProgress";
 
 export default function App(): React.ReactElement {
   const [isNavigationOpen, setIsNavigationOpen] = React.useState(false);
   const [selectedService, setSelectedService] = React.useState<Service | null>(null);
 
   useReveal();
+  const activeSection = useScrollStory();
+  useTactileInteraction();
 
   const bookingUrl = React.useMemo(buildBookingUrl, []);
 
@@ -61,6 +66,7 @@ export default function App(): React.ReactElement {
         service={signatureService}
       />
 
+      <SectionProgress activeSection={activeSection} onNavigate={navigateTo} />
       <main>
         <Hero
           image={heroImage}
