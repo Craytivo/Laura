@@ -200,7 +200,7 @@ footer{display:grid;grid-template-columns:1fr auto auto;gap:40px;align-items:cen
 .hero-kicker .pill{flex:0 0 auto}
 .hero-art-frame>picture{position:absolute;inset:0;z-index:0}
 .hero-art-frame>.hero-photo{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(.96)}
-.hero-art-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(145deg,color-mix(in srgb, var(--surface-page) 84%, transparent) 0%,rgba(239,232,223,.56) 48%,color-mix(in srgb, var(--accent) 38%, transparent) 100%);pointer-events:none}
+.hero-art-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(145deg,color-mix(in srgb, var(--surface-page) 84%, transparent) 0%,color-mix(in srgb, var(--surface-secondary) 56%, transparent) 48%,color-mix(in srgb, var(--accent) 38%, transparent) 100%);pointer-events:none}
 .hero-art-inner{z-index:2;background:linear-gradient(145deg,color-mix(in srgb, var(--surface-secondary) 12%, transparent) 0%,color-mix(in srgb, var(--surface-tertiary) 8%, transparent) 55%,color-mix(in srgb, var(--text-primary) 8%, transparent) 100%)}
 .hero-art-copy{position:absolute;left:8%;bottom:8%;display:flex;flex-direction:column;align-items:flex-start;gap:12px;color:var(--text-primary);text-shadow:0 1px 18px color-mix(in srgb, var(--surface-raised) 28%, transparent)}
 .hero-art-copy>span,.hero-art-copy>small{font-size:8px;line-height:1.2;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
@@ -368,7 +368,7 @@ footer{display:grid;grid-template-columns:1fr auto auto;gap:40px;align-items:cen
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,rgba(61,55,50,.01) 50%,color-mix(in srgb, var(--text-primary) 25%, transparent));
+  background:linear-gradient(180deg,color-mix(in srgb, var(--text-primary) 1%, transparent) 50%,color-mix(in srgb, var(--text-primary) 25%, transparent));
   pointer-events:none;
 }
 .gallery-item figcaption{
@@ -2016,7 +2016,7 @@ footer>p,
   background:linear-gradient(
     145deg,
     color-mix(in srgb, var(--surface-page) 58%, transparent) 0%,
-    rgba(239,232,223,.30) 48%,
+    color-mix(in srgb, var(--surface-secondary) 30%, transparent) 48%,
     color-mix(in srgb, var(--text-primary) 16%, transparent) 100%
   );
 }
