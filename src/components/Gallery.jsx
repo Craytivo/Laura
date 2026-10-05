@@ -33,12 +33,6 @@ export function Gallery({ images }) {
         ))}
       </div>
 
-      <div className="brand-moment brand-moment-gallery">
-        <img className="ru-monogram ru-monogram-brand" src="/images/ru-monogram.svg" alt="" aria-hidden="true" />
-        <div>
-          <em>Softness is part of the service.</em>
-          <span>RU SUGARING · EDMONTON</span>
-        </div>
       </div>
     </section>
   );
