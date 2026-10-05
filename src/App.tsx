@@ -53,3 +53,5 @@ export default function App(): React.ReactElement {
     <Footer business={site} onNavigate={navigateTo} />
   </div>;
 }
+
+// Vercel rebuild trigger
