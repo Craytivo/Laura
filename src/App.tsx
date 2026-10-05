@@ -9,7 +9,7 @@ import { buildBookingUrl } from "./features/booking/config/booking";
 import { useReveal } from "./hooks/useReveal";
 import { useScrollStory } from "./hooks/useScrollStory";
 import { useTactileInteraction } from "./hooks/useTactileInteraction";
-import { Header } from "./features/site/components/Header";
+import { Header } from "./components/Header";
 import { Hero } from "./features/site/components/Hero";
 import { SignatureService } from "./features/site/components/SignatureService";
 import { WhySugaring } from "./features/site/components/WhySugaring";
@@ -53,3 +53,5 @@ export default function App(): React.ReactElement {
     <Footer business={site} onNavigate={navigateTo} />
   </div>;
 }
+
+// Vercel rebuild trigger
