@@ -1774,3 +1774,82 @@ footer{
 .service-swipe-select{border-color:var(--olive);color:var(--olive)}
 .section-progress-track button:hover span,.section-progress-track button.is-active span{background:var(--olive)}
 .section-progress-mark{border-color:rgba(115,117,93,.42);color:var(--olive)}
+
+
+/* =========================================================
+   Minimalist final pass — fewer containers, fewer signals
+   ========================================================= */
+.button,
+.nav-book{
+  border-radius:4px!important;
+}
+.hero-offer,
+.service-card,
+.bundle-card,
+.faq details,
+.service-note{
+  border-radius:0!important;
+}
+.hero-offer{
+  background:var(--cream);
+  box-shadow:none!important;
+}
+.hero-art{
+  padding:20px 30px 20px 14px;
+}
+.hero-art-frame{
+  border-radius:0;
+}
+.signature-image{
+  padding:32px;
+}
+.service-card{
+  box-shadow:none;
+  transform:none!important;
+}
+.service-card:hover{
+  background:transparent;
+  transform:none!important;
+}
+.service-card.featured{
+  box-shadow:inset 2px 0 0 var(--olive);
+}
+.service-card.selected{
+  background:var(--cream);
+  box-shadow:inset 2px 0 0 var(--olive);
+}
+.bundle-card:hover{
+  background:transparent;
+  padding-left:0;
+}
+.gallery-item img,
+.signature-image img,
+.hero-art-frame img{
+  border-radius:0;
+}
+.gallery-section{
+  background:var(--ivory);
+}
+.gallery-item figcaption{
+  background:linear-gradient(180deg,transparent,rgba(61,55,50,.16));
+}
+.book{
+  background:var(--brown);
+}
+.book-actions .gift-button{
+  border-bottom-color:rgba(247,243,238,.55);
+}
+@media(max-width:800px){
+  .hero-art{
+    padding:10px 22px 0;
+  }
+  .signature-image{
+    padding:0 22px;
+  }
+  .hero-offer{
+    border-left-width:2px;
+  }
+  .service-card.selected{
+    background:var(--cream);
+  }
+}
