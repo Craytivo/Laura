@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { AppErrorBoundary } from "./components/AppErrorBoundary";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./styles.css";
 
 const rootElement = document.getElementById("root");
@@ -15,5 +16,6 @@ createRoot(rootElement).render(
     <AppErrorBoundary>
       <App />
     </AppErrorBoundary>
+    <SpeedInsights />
   </React.StrictMode>
 );
