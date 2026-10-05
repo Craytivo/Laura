@@ -1,4 +1,4 @@
-import type { Service, ServiceId } from "../types";
+import type { Service, ServiceId } from "../../../types";
 
 export const services = [
   { id:"brazilian", name:"Brazilian", price:"$45", duration:"1 hour", description:"Smooth, personalized Brazilian sugaring with care and comfort in mind.", badge:"Most booked", featured:true },
@@ -13,15 +13,5 @@ export const services = [
   { id:"full-face", name:"Full Face", price:"$25", duration:"30 min", description:"A smooth, fresh finish for the full face." },
   { id:"tailored-add-ons", name:"Tailored Add-ons", price:"$10+", duration:"15 min", description:"Personalize your service with carefully selected add-ons. Prices vary." }
 ] satisfies Service[];
-
 export const brazilian: Service = services.find(({ id }) => id === "brazilian")!;
-
-export function getService(id: ServiceId): Service {
-  const service = services.find(item => item.id === id);
-
-  if (!service) {
-    throw new Error(`Unknown service: ${id}`);
-  }
-
-  return service;
-}
+export function getService(id: ServiceId): Service { const service = services.find(item => item.id === id); if (!service) throw new Error(`Unknown service: ${id}`); return service; }

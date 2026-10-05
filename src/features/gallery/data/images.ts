@@ -1,5 +1,4 @@
-import type { SiteImage } from "../types";
-
+import type { SiteImage } from "../../../types";
 export const images: SiteImage[] = [
   { src:"/images/IMG_2317.jpeg", alt:"RU Sugaring Edmonton studio", priority:true, role:"hero" },
   { src:"/images/IMG_2333.jpeg", alt:"RU Sugaring Brazilian service", priority:false, role:"signature" },

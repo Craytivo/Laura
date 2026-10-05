@@ -1,5 +1,4 @@
-import type { Bundle } from "../types";
-
+import type { Bundle } from "../../../types";
 export const bundles: Bundle[] = [
   { id:"brazilian-underarms", name:"Brazilian + Underarms", price:"$55", duration:"55 min", description:"Bundle & save $10" },
   { id:"brazilian-underarms-half-legs", name:"Brazilian + Underarms + Half Legs", price:"$95", duration:"1 hr 20 min", description:"Bundle & save $15" },
