@@ -9,6 +9,8 @@
   --taupe: #877B71;
   --white: #FCFAF7;
   --line: #D9CEC3;
+  --olive: #73755D;
+  --olive-soft: #E3E4D8;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -1220,102 +1222,6 @@ footer{
    RU life layer — motion, touch, and quieter brand repetition
    ========================================================= */
 
-@media (prefers-reduced-motion: no-preference) {
-  .hero-art-frame {
-    animation: ruHeroBreath 12s ease-in-out infinite alternate;
-  }
-
-  .hero-art-frame .hero-photo {
-    transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter .7s ease;
-  }
-
-  .hero-art-frame:hover .hero-photo {
-    transform: scale(1.025);
-    filter: saturate(.98);
-  }
-
-  .hero-art-orbit {
-    transition: transform .8s cubic-bezier(.2,.8,.2,1), background .4s ease;
-  }
-
-  .hero-art-frame:hover .hero-art-orbit {
-    transform: rotate(8deg) scale(1.04);
-    background: rgba(252,250,247,.16);
-  }
-
-  .service-card .service-number {
-    transition: color .25s ease, transform .35s cubic-bezier(.2,.8,.2,1);
-  }
-
-  .service-card .service-title h3 {
-    transition: transform .35s cubic-bezier(.2,.8,.2,1), color .25s ease;
-  }
-
-  .service-card .service-book-link {
-    transition: opacity .25s ease, background .25s ease, color .25s ease,
-      border-color .25s ease, transform .35s cubic-bezier(.2,.8,.2,1);
-  }
-
-  .service-card:hover .service-number,
-  .service-card.selected .service-number {
-    color: var(--brown);
-    transform:translateX(4px);
-  }
-
-  .service-card:hover .service-title h3,
-  .service-card.selected .service-title h3 {
-    transform:translateX(3px);
-  }
-
-  .service-card:hover .service-book-link,
-  .service-card.selected .service-book-link {
-    transform:translateX(3px);
-  }
-
-  .gallery-item .gallery-photo {
-    transition: transform .9s cubic-bezier(.2,.7,.2,1), filter .6s ease;
-  }
-
-  .gallery-item:hover .gallery-photo {
-    transform:scale(1.035) translateY(-2px);
-  }
-
-  .bundle-card h3,
-  .bundle-card svg {
-    transition:transform .35s cubic-bezier(.2,.8,.2,1);
-  }
-
-  .bundle-card:hover h3 {
-    transform:translateX(3px);
-  }
-
-  .bundle-card:hover svg {
-    transform:translate(4px,-2px);
-  }
-
-  .faq details summary span {
-    transition:transform .3s ease, color .25s ease;
-  }
-
-  .faq details[open] summary span {
-    transform:rotate(45deg);
-    color:var(--brown);
-  }
-
-  .brand-moment-mark {
-    transition:transform .6s cubic-bezier(.2,.8,.2,1);
-  }
-
-  .brand-moment-gallery:hover .brand-moment-mark {
-    transform:rotate(-6deg) scale(1.05);
-  }
-}
-
-@keyframes ruHeroBreath {
-  from { transform:scale(1); }
-  to { transform:scale(1.008); }
-}
-
 /* The RU mark behaves like a signature, not decoration. */
 .brand-moment-gallery {
   position:relative;
@@ -1608,27 +1514,6 @@ footer{
   }
 }
 
-@media(prefers-reduced-motion:reduce){
-  .section-progress-track button span,
-  [data-magnetic],
-  .hero-photo,
-  .signature-photo,
-  .gallery-photo{
-    transition:none!important;
-    transform:none!important;
-  }
-}
-
-@media (prefers-reduced-motion:no-preference){
-  .hero-art-frame:hover .hero-photo{
-    transform:translate3d(0,var(--ru-parallax,0px),0) scale(1.025);
-  }
-  .gallery-item:hover .gallery-photo{
-    transform:translate3d(0,var(--ru-parallax,0px),0) scale(1.035);
-  }
-}
-
-
 /* =========================================================
    Final clarity pass — less chrome, clearer hierarchy
    ========================================================= */
@@ -1875,74 +1760,18 @@ footer{
 }
 
 
-/* =========================================================
-   RU signature accent — muted olive, used as a brand signal
-   ========================================================= */
-:root{
-  --olive:#73755D;
-  --olive-soft:#E3E4D8;
-}
 
-/* Olive is intentionally limited to moments of state and identity. */
-:focus-visible{
-  outline-color:var(--olive);
-}
-.hero-offer{
-  border-left-color:var(--olive);
-}
-.hero-trust svg{
-  color:var(--olive);
-}
-.service-card.featured{
-  box-shadow:inset 3px 0 0 var(--olive);
-}
-.popular{
-  background:var(--olive);
-}
-.service-card.selected{
-  box-shadow:inset 3px 0 0 var(--olive);
-}
-.service-card.selected .service-select{
-  color:var(--olive);
-  font-weight:600;
-}
-.service-card.selected .service-number,
-.service-card.selected .service-title h3{
-  color:var(--olive);
-}
-.signature-kicker span:first-child{
-  color:var(--olive);
-}
-.signature-details:before{
-  color:var(--olive);
-}
-.section-progress-track button:hover span,
-.section-progress-track button.is-active span{
-  background:var(--olive);
-}
-.section-progress-mark{
-  border-color:rgba(115,117,93,.42);
-  color:var(--olive);
-}
-.mobile-booking-bar.has-selection{
-  border-top-color:var(--olive);
-}
-.mobile-booking-bar.has-selection button{
-  background:var(--olive);
-}
-.mobile-booking-bar.has-selection button:hover{
-  background:#62644F;
-}
-.service-swipe{
-  border-top-color:var(--olive);
-}
-.service-swipe-top span:first-child{
-  color:var(--olive);
-}
-.service-swipe-select{
-  border-color:var(--olive);
-  color:var(--olive);
-}
-.brand-moment-gallery:after{
-  color:var(--olive);
-}
+/* Signature accent — olive is reserved for identity and active states. */
+:focus-visible{outline-color:var(--olive)}
+.hero-offer{border-left-color:var(--olive)}
+.hero-trust svg{color:var(--olive)}
+.service-card.featured,.service-card.selected{box-shadow:inset 3px 0 0 var(--olive)}
+.service-card.selected .service-select{color:var(--olive);font-weight:600}
+.signature-kicker span:first-child,.signature-details:before{color:var(--olive)}
+.mobile-booking-bar.has-selection{border-top-color:var(--olive)}
+.mobile-booking-bar.has-selection button{background:var(--olive)}
+.service-swipe{border-top-color:var(--olive)}
+.service-swipe-top span:first-child{color:var(--olive)}
+.service-swipe-select{border-color:var(--olive);color:var(--olive)}
+.section-progress-track button:hover span,.section-progress-track button.is-active span{background:var(--olive)}
+.section-progress-mark{border-color:rgba(115,117,93,.42);color:var(--olive)}
