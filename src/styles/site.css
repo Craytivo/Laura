@@ -1618,3 +1618,12 @@ footer{
     transform:none!important;
   }
 }
+
+@media (prefers-reduced-motion:no-preference){
+  .hero-art-frame:hover .hero-photo{
+    transform:translate3d(0,var(--ru-parallax,0px),0) scale(1.025);
+  }
+  .gallery-item:hover .gallery-photo{
+    transform:translate3d(0,var(--ru-parallax,0px),0) scale(1.035);
+  }
+}
