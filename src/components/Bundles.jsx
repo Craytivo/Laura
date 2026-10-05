@@ -4,7 +4,7 @@ import { BundleCard } from "./bundles/BundleCard";
 
 export function Bundles({ bundles, bookingUrl }) {
   return (
-    <section className="bundles section" data-reveal>
+    <section id="bundles" className="bundles section" data-reveal>
       <div className="bundle-intro">
         <SectionHeading eyebrow="Bundles">
           <h2>More smooth.<br /><em>More value.</em></h2>
