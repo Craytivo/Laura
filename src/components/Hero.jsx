@@ -34,7 +34,6 @@ export function Hero({ image, service, business, onBook, onNavigate }) {
               <b>{service.name}</b>
               <span>{service.duration} · signature service</span>
             </div>
-            <Button onClick={onBook} className="hero-offer-button">Book <ArrowRight size={15} /></Button>
           </CardBody>
         </Card>
 
