@@ -1873,3 +1873,76 @@ footer{
     font-size:8px;
   }
 }
+
+
+/* =========================================================
+   RU signature accent — muted olive, used as a brand signal
+   ========================================================= */
+:root{
+  --olive:#73755D;
+  --olive-soft:#E3E4D8;
+}
+
+/* Olive is intentionally limited to moments of state and identity. */
+:focus-visible{
+  outline-color:var(--olive);
+}
+.hero-offer{
+  border-left-color:var(--olive);
+}
+.hero-trust svg{
+  color:var(--olive);
+}
+.service-card.featured{
+  box-shadow:inset 3px 0 0 var(--olive);
+}
+.popular{
+  background:var(--olive);
+}
+.service-card.selected{
+  box-shadow:inset 3px 0 0 var(--olive);
+}
+.service-card.selected .service-select{
+  color:var(--olive);
+  font-weight:600;
+}
+.service-card.selected .service-number,
+.service-card.selected .service-title h3{
+  color:var(--olive);
+}
+.signature-kicker span:first-child{
+  color:var(--olive);
+}
+.signature-details:before{
+  color:var(--olive);
+}
+.section-progress-track button:hover span,
+.section-progress-track button.is-active span{
+  background:var(--olive);
+}
+.section-progress-mark{
+  border-color:rgba(115,117,93,.42);
+  color:var(--olive);
+}
+.mobile-booking-bar.has-selection{
+  border-top-color:var(--olive);
+}
+.mobile-booking-bar.has-selection button{
+  background:var(--olive);
+}
+.mobile-booking-bar.has-selection button:hover{
+  background:#62644F;
+}
+.service-swipe{
+  border-top-color:var(--olive);
+}
+.service-swipe-top span:first-child{
+  color:var(--olive);
+}
+.service-swipe-select{
+  border-color:var(--olive);
+  color:var(--olive);
+}
+.brand-moment-gallery:after{
+  color:var(--olive);
+}
