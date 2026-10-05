@@ -19,7 +19,6 @@ import { FAQ } from "./components/FAQ";
 import { FinalCTA } from "./components/FinalCTA";
 import { MobileBookingBar } from "./components/MobileBookingBar";
 import { Footer } from "./components/Footer";
-import { SectionProgress } from "./components/SectionProgress";
 
 export default function App(): React.ReactElement {
   const [isNavigationOpen, setIsNavigationOpen] = React.useState(false);
@@ -66,7 +65,6 @@ export default function App(): React.ReactElement {
         service={signatureService}
       />
 
-      <SectionProgress activeSection={activeSection} onNavigate={navigateTo} />
       <main>
         <Hero
           image={heroImage}
