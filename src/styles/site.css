@@ -1627,3 +1627,249 @@ footer{
     transform:translate3d(0,var(--ru-parallax,0px),0) scale(1.035);
   }
 }
+
+
+/* =========================================================
+   Final clarity pass — less chrome, clearer hierarchy
+   ========================================================= */
+.hero-offer{
+  max-width:410px;
+  padding:15px 18px;
+}
+.hero-offer-body{
+  min-height:58px;
+}
+.hero-actions{
+  gap:18px;
+}
+.hero-trust{
+  gap:7px 16px;
+}
+.section-marker{
+  opacity:.72;
+}
+.service-card{
+  min-height:104px;
+}
+.service-meta{
+  gap:12px;
+}
+.service-select{
+  color:var(--taupe);
+}
+.gallery-item figcaption{
+  background:linear-gradient(180deg,transparent,rgba(61,55,50,.22));
+}
+.bundle-card{
+  min-height:92px;
+}
+.faq summary span{
+  color:var(--brown);
+}
+.mobile-booking-bar{
+  border-top:1px solid var(--line);
+  box-shadow:0 -10px 28px rgba(61,55,50,.07);
+}
+@media(max-width:800px){
+  .section{
+    padding:82px 22px;
+  }
+  .section-heading.light{
+    margin-bottom:42px;
+  }
+  .section-heading h2,
+  .services .section-heading h2,
+  .bundles .section-heading h2,
+  .faq .section-heading h2{
+    font-size:50px;
+    line-height:.92;
+  }
+  .section-lede{
+    margin-top:20px;
+    font-size:13px;
+    line-height:1.65;
+  }
+  .hero-offer{
+    margin-top:22px;
+    padding:12px 13px;
+  }
+  .hero-offer-body{
+    min-height:62px;
+  }
+  .hero-offer-price strong{
+    font-size:36px;
+  }
+  .hero-offer-service b{
+    font-size:14px;
+  }
+  .hero-actions{
+    margin-top:20px;
+    gap:7px;
+  }
+  .hero-trust{
+    margin-top:17px;
+  }
+  .hero-art{
+    height:250px;
+  }
+  .signature{
+    min-height:auto;
+  }
+  .signature-copy{
+    padding-top:58px;
+    padding-bottom:64px;
+  }
+  .signature-copy h2{
+    font-size:50px;
+  }
+  .signature-price{
+    margin:28px 0 22px;
+    padding:18px 0;
+  }
+  .signature-details{
+    margin:20px 0 25px;
+  }
+  .dark-section{
+    padding:82px 22px;
+  }
+  .feature-grid{
+    gap:32px;
+    margin-top:50px;
+  }
+  .feature-grid h3{
+    margin-top:17px;
+    font-size:21px;
+  }
+  .feature-grid p{
+    font-size:12px;
+  }
+  .services .service-list{
+    border-top:1px solid var(--line);
+  }
+  .service-card{
+    min-height:96px;
+    grid-template-columns:32px minmax(0,1fr);
+    gap:12px;
+    padding:18px 0;
+  }
+  .service-card.featured{
+    padding-left:12px;
+  }
+  .service-title{
+    gap:10px;
+  }
+  .service-title h3{
+    font-size:19px;
+  }
+  .service-title strong{
+    font-size:14px;
+  }
+  .service-main p{
+    margin-top:7px;
+    font-size:11px;
+    line-height:1.45;
+  }
+  .service-meta{
+    grid-column:2;
+    justify-content:space-between;
+    margin-top:-5px;
+  }
+  .service-card .service-book-link{
+    min-height:34px;
+    padding:0 13px;
+    font-size:8px;
+  }
+  .service-select{
+    font-size:8px;
+    letter-spacing:.1em;
+  }
+  .service-book-row{
+    padding-top:24px;
+  }
+  .service-note{
+    margin-top:32px;
+  }
+  .gallery-section{
+    padding:82px 22px;
+  }
+  .gallery-intro{
+    margin-bottom:34px;
+  }
+  .gallery-title h2{
+    font-size:50px;
+  }
+  .gallery-intro-side p{
+    font-size:12px;
+  }
+  .editorial-gallery{
+    gap:5px;
+    grid-auto-rows:110px;
+  }
+  .bundles{
+    padding-top:82px;
+    padding-bottom:82px;
+  }
+  .bundle-card{
+    min-height:82px;
+    padding:20px 0;
+  }
+  .bundle-card h3{
+    font-size:17px;
+  }
+  .bundle-card p{
+    font-size:10px;
+  }
+  .bundle-price{
+    gap:9px;
+  }
+  .bundle-price strong{
+    font-size:21px;
+  }
+  .faq{
+    padding-top:82px;
+    padding-bottom:82px;
+  }
+  .faq details{
+    padding:21px 0;
+  }
+  .faq summary span{
+    font-size:19px;
+  }
+  .book{
+    grid-template-columns:1fr;
+    gap:38px;
+    padding:82px 22px;
+  }
+  .book h2{
+    font-size:56px;
+  }
+  .book-actions{
+    align-items:stretch;
+  }
+  .book-actions .button{
+    width:100%;
+  }
+  .section-progress{
+    display:none;
+  }
+  .mobile-booking-bar{
+    left:0;
+    right:0;
+    bottom:0;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .mobile-booking-copy span{
+    font-size:8px;
+  }
+  .mobile-booking-copy strong{
+    font-size:11px;
+  }
+  .mobile-booking-copy small{
+    font-size:7px;
+  }
+  .mobile-booking-bar button{
+    min-height:42px;
+    padding:0 15px;
+    font-size:8px;
+  }
+}
