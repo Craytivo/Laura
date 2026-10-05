@@ -23,7 +23,7 @@ export function SectionProgress({ activeSection, onNavigate }: SectionProgressPr
   return (
     <div className="section-progress" aria-label="Page progress">
       <button type="button" className="section-progress-mark" onClick={() => onNavigate("home")} aria-label="Back to top">RU</button>
-      <div className="section-progress-track">
+      <div className="section-progress-track" aria-hidden="true">
         {SECTIONS.map((section, sectionIndex) => (
           <button
             key={section.id}
