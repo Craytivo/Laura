@@ -68,7 +68,6 @@ export interface SiteConfig {
     label: string;
     details: readonly string[];
   };
-  faq: readonly FAQItem[];
   nav: readonly NavItem[];
   footer: string;
 }
