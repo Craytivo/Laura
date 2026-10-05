@@ -1853,3 +1853,22 @@ footer{
     background:var(--cream);
   }
 }
+
+
+/* Final booking CTA — restore readable contrast on the dark background. */
+.book,
+.book h2,
+.book .eyebrow,
+.book>div>p:last-child,
+.book-actions .gift-button{
+  color:var(--ivory);
+}
+.book .eyebrow{
+  color:var(--cream);
+}
+.book>div>p:last-child{
+  color:var(--cream);
+}
+.book-actions .gift-button{
+  border-bottom:1px solid rgba(247,243,238,.55);
+}
