@@ -18,7 +18,8 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "lucide-react": "^0.468.0",
-    "@heroui/react": "^2.8.5"
+    "@heroui/react": "^2.8.5",
+    "@vercel/speed-insights": "^2.0.0"
   },
   "devDependencies": {
     "sharp": "^0.35.4",
