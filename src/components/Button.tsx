@@ -32,6 +32,7 @@ export function Button({
       radius="lg"
       variant="solid"
       className={`button button-${variant} ${className}`.trim()}
+      data-magnetic="true"
       onClick={onClick}
       isDisabled={disabled}
     >
