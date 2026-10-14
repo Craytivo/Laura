@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./Button";
-import { ResponsiveImage } from "./ResponsiveImage";
+import { ResponsiveImage } from "./ui/ResponsiveImage";
 export function SignatureService({image,service,business,onBook}){
  return <section id="signature" className="signature" data-reveal><div className="signature-image"><ResponsiveImage image={image} className="real-image signature-photo" loading="lazy" sizes="(max-width: 800px) 100vw, 50vw"/></div>
   <div className="signature-copy"><div className="signature-kicker"><span>{business.signature.kicker}</span><span>{business.signature.label.toUpperCase()}</span></div><p className="eyebrow">{service.name.toUpperCase()}</p><h2>Smooth,<br/><em>made personal.</em></h2>
