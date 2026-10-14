@@ -4,7 +4,7 @@ import { Card, CardBody } from "@heroui/react";
 import { Button } from "./Button";
 import { Pill } from "./ui/Pill";
 import { Eyebrow } from "./ui/Eyebrow";
-import { ResponsiveImage } from "./ResponsiveImage";
+import { ResponsiveImage } from "./ui/ResponsiveImage";
 
 export function Hero({ image, service, business, onBook, onNavigate }) {
   return (
