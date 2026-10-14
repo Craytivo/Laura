@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import type { Service, SiteConfig } from "../../../types";
-import { Button } from "../../../components/ui/Button";
+import { Button } from "../../../components/Button";
 
 interface HeaderProps { open: boolean; onToggle: () => void; onNavigate: (id: string) => void; onBook: () => void; business: SiteConfig; service: Service; }
 
