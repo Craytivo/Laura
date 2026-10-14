@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
-import { Button } from "../../../components/ui/Button";
+import { Button } from "../../../components/Button";
 import { SectionHeading } from "../../../components/ui/SectionHeading";
 import { ServiceCard } from "./ServiceCard";
 
