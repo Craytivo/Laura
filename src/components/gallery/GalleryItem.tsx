@@ -1,6 +1,6 @@
 import React from "react";
 import type { SiteImage } from "../../types";
-import { ResponsiveImage } from "../ResponsiveImage";
+import { ResponsiveImage } from "../ui/ResponsiveImage";
 
 const LABELS = ["THE STUDIO", "THE DETAILS", "THE FEEL", "THE FINISH"] as const;
 
