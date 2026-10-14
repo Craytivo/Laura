@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { Card, CardBody } from "@heroui/react";
-import { Button } from "../../../components/ui/Button";
+import { Button } from "../../../components/Button";
 import { Pill } from "../../../components/ui/Pill";
 import { Eyebrow } from "../../../components/ui/Eyebrow";
 import { ResponsiveImage } from "../../../components/ui/ResponsiveImage";
