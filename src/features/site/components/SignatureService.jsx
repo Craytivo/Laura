@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import { Button } from "../../../components/ui/Button";
+import { Button } from "../../../components/Button";
 import { ResponsiveImage } from "../../../components/ui/ResponsiveImage";
 export function SignatureService({image,service,business,onBook}){
  return <section id="signature" className="signature" data-reveal><div className="signature-image"><ResponsiveImage image={image} className="real-image signature-photo" loading="lazy" sizes="(max-width: 800px) 100vw, 50vw"/></div>
