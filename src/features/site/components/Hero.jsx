@@ -6,6 +6,7 @@ import { Pill } from "../../../components/ui/Pill";
 import { Eyebrow } from "../../../components/ui/Eyebrow";
 import { ResponsiveImage } from "../../../components/ui/ResponsiveImage";
 import { useHeroMotion } from "../../../hooks/useHeroMotion";
+import { SectionIndex } from "../../../components/ui/SectionIndex";
 
 export function Hero({ image, service, business, onBook, onNavigate }) {
   const heroRef = useRef(null);
@@ -13,10 +14,9 @@ export function Hero({ image, service, business, onBook, onNavigate }) {
 
   return (
     <section ref={heroRef} id="home" className="hero">
-      <div className="hero-copy">
+      <SectionIndex number="01" /><div className="hero-copy">
         <img className="ru-monogram ru-monogram-hero" src="/images/ru-monogram.svg" alt="" aria-hidden="true" width="180" height="180" />
         <div className="hero-kicker">
-          <span className="hero-kicker-number">01</span>
           <Pill>Private Studio</Pill>
           <span>EDMONTON</span>
         </div>

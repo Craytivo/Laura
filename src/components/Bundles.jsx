@@ -1,10 +1,11 @@
 import React from "react";
 import { SectionHeading } from "./ui/SectionHeading";
 import { BundleCard } from "./bundles/BundleCard";
+import { SectionIndex } from "./ui/SectionIndex";
 
 export function Bundles({ bundles, bookingUrl }) {
   return (
-    <section id="bundles" className="bundles section" data-reveal>
+    <section id="bundles" className="bundles section" data-reveal><SectionIndex number="06" />
       <div className="bundle-intro">
         <SectionHeading eyebrow="Bundles">
           <h2>More smooth.<br /><em>More value.</em></h2>

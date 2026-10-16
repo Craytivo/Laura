@@ -3059,3 +3059,46 @@ p{ text-wrap:pretty; }
   .why-story-copy p,.why-story-heading h3{transition:none}
 }
 
+/* One consistent section index system: 01 Hero, 02 Signature, 03 Why, 04 Services, 05 Gallery, 06 Bundles, 07 FAQ, 08 Booking. */
+.hero,
+.signature,
+.why-section,
+.services,
+.gallery-section,
+.bundles,
+.faq,
+.book{
+  position:relative;
+}
+.section-index{
+  position:absolute;
+  top:clamp(28px,4vw,48px);
+  right:var(--gutter);
+  z-index:4;
+  color:var(--accent-strong);
+  font-family:var(--font-display);
+  font-size:15px;
+  font-weight:500;
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.dark-section .section-index{
+  color:var(--color-pink-soft);
+}
+.book .section-index{color:var(--text-primary)}
+.signature-copy:after,
+.gallery-heading:after,
+.dark-section:before,
+.bundles:before,
+.faq:before,
+.book:before{
+  content:none;
+}
+@media(max-width:800px){
+  .section-index{
+    top:28px;
+    right:22px;
+    font-size:13px;
+  }
+}
+

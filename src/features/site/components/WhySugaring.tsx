@@ -1,12 +1,13 @@
 import React from "react";
 import type { WhyFeature } from "../../../types";
 import { SectionHeading } from "../../../components/ui/SectionHeading";
+import { SectionIndex } from "../../../components/ui/SectionIndex";
 
 interface WhySugaringProps { features: readonly WhyFeature[]; story: readonly string[]; }
 
 export function WhySugaring({ features, story }: WhySugaringProps): React.ReactElement {
   return (
-    <section id="why" className="dark-section why-section" data-reveal>
+    <section id="why" className="dark-section why-section" data-reveal><SectionIndex number="03" />
       <SectionHeading eyebrow="My why" dark><h2>My why.<br /><em>With care.</em></h2></SectionHeading>
       <div className="why-story">
         <div className="why-story-heading"><span>PERSONAL NOTE</span><h3>Living with HS<br /><em>changed how I care.</em></h3></div>

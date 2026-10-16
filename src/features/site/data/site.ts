@@ -18,7 +18,7 @@ export const site = {
     "Come as you are. Leave feeling smooth, confident, and cared for."
   ],
   why:[{ title:"Thoughtful", description:"Your appointment is personal, not rushed. Every service is tailored to you." },{ title:"Private", description:"A comfortable home-based setting with one-on-one attention." },{ title:"Simple", description:"Clear services, straightforward pricing, and easy online booking." }],
-  signature:{ kicker:"01", label:"The RU Signature", details:["Private studio","One-on-one care","Edmonton"] },
+  signature:{ kicker:"SIGNATURE", label:"The RU Signature", details:["Private studio","One-on-one care","Edmonton"] },
   nav:[{ label:"Services", id:"services" },{ label:"Why sugaring", id:"why" },{ label:"FAQ", id:"faq" }],
   footer:"Edgemont, Edmonton, Canada - Home-based sugaring studio"
 } satisfies SiteConfig;

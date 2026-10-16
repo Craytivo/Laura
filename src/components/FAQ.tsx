@@ -2,6 +2,7 @@ import React from "react";
 import type { FAQItem as FAQItemData } from "../types";
 import { SectionHeading } from "./ui/SectionHeading";
 import { FAQItem } from "./faq/FAQItem";
+import { SectionIndex } from "./ui/SectionIndex";
 
 interface FAQProps {
   items: readonly FAQItemData[];
@@ -9,7 +10,7 @@ interface FAQProps {
 
 export function FAQ({ items }: FAQProps): React.ReactElement {
   return (
-    <section id="faq" className="section faq" data-reveal>
+    <section id="faq" className="section faq" data-reveal><SectionIndex number="07" />
       <SectionHeading eyebrow="Good to know" description="A few thoughtful details before your private appointment.">
         <h2>Your questions,<br /><em>answered.</em></h2>
       </SectionHeading>

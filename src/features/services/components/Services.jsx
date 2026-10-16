@@ -3,13 +3,14 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "../../../components/Button";
 import { SectionHeading } from "../../../components/ui/SectionHeading";
 import { ServiceCard } from "./ServiceCard";
+import { SectionIndex } from "../../../components/ui/SectionIndex";
 
 export function Services({ services, selected, onSelect, bookingUrl }) {
   const categories = [...new Set(services.map(service => service.category))];
 
   return (
     <section id="services" className="section services" data-reveal data-story-section>
-      <span className="section-marker" aria-hidden="true">03 / SERVICE MENU</span>
+      <SectionIndex number="04" /><span className="section-marker" aria-hidden="true">SERVICE MENU</span>
       <SectionHeading eyebrow="Service Menu" description="Choose your service, then book your time directly through RU's Acuity schedule."><h2>Pick your<br/><em>smooth.</em></h2></SectionHeading>
       <div className="service-list">
         {categories.map((category, categoryIndex) => (
