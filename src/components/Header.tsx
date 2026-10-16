@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Instagram, Menu, X } from "lucide-react";
 import type { Service, SiteConfig } from "../types";
 import { Button } from "./Button";
 
@@ -27,8 +27,16 @@ export function Header({ open, onToggle, onNavigate, onBook, business, service }
           {business.nav.map(item => (
             <button key={item.id} type="button" onClick={() => onNavigate(item.id)}>{item.label}</button>
           ))}
+          <a className="nav-instagram" href="https://www.instagram.com/rusugaring/" target="_blank" rel="noopener noreferrer" aria-label="Follow RU Sugaring on Instagram">
+            <Instagram size={15} aria-hidden="true" /><span>@rusugaring</span>
+          </a>
           <Button className="nav-book" onClick={onBook}>Book appointment <ArrowRight size={15} /></Button>
         </nav>
+        <div className="nav-mobile-details">
+          <span>Edgemont, Edmonton, Canada</span>
+          <span>Monday - Friday, 4:00 - 7:00 PM</span>
+          <span>Saturday - Sunday, 9:00 AM - 6:00 PM</span>
+        </div>
         <div className="nav-mobile-book">
           <span>{service.price} · {service.name}</span>
           <Button onClick={onBook}>Book your appointment <ArrowRight size={15} /></Button>
