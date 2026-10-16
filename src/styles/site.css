@@ -8,6 +8,9 @@
   --color-cream: #EFE8DF;
   --color-sand: #E3D7CB;
   --color-clay: #B69B87;
+  --color-pink: #BB7EB7;
+  --color-pink-soft: #F3E3F0;
+  --color-pink-deep: #8D568A;
   --color-brown: #3D3732;
   --color-brown-soft: #625A53;
   --color-taupe: #6B625B;
@@ -31,12 +34,12 @@
   --text-on-inverse: var(--color-ivory);
 
   --border-default: var(--color-line);
-  --accent: var(--color-clay);
+  --accent: var(--color-pink);
   --accent-strong: var(--color-olive);
 
   /* Derived states — generated instead of storing another hex value. */
   --accent-surface: color-mix(in srgb, var(--accent) 14%, transparent);
-  --accent-hover: color-mix(in srgb, var(--accent) 82%, var(--text-primary));
+  --accent-hover: color-mix(in srgb, var(--color-pink-deep) 82%, var(--text-primary));
   --surface-hover: color-mix(in srgb, var(--surface-secondary) 72%, var(--surface-page));
   --focus-ring: var(--text-primary);
 
@@ -2945,16 +2948,18 @@ p{ text-wrap:pretty; }
   z-index:3;
   left:-7%;
   right:-7%;
-  bottom:-1px;
+  bottom:-2px;
   height:clamp(22px,3vw,46px);
   pointer-events:none;
+  border-radius:50% 50% 0 0 / 100% 100% 0 0;
   clip-path:ellipse(72% 100% at 50% 100%);
 }
-.signature:before{background:var(--text-primary)}
+.signature:before{background:linear-gradient(100deg,var(--text-primary),color-mix(in srgb,var(--color-pink-deep) 12%,var(--text-primary)))}
 .dark-section:after{background:var(--surface-page)}
 .bundles:after{background:var(--surface-page)}
-.faq:after{background:var(--accent)}
+.faq:after{background:var(--color-pink)}
 .book:after{background:var(--text-primary)}
+.why-section:after{box-shadow:0 -10px 30px color-mix(in srgb,var(--color-pink) 8%,transparent)}
 @media(max-width:800px){
   .signature:before,
   .dark-section:after,
@@ -2964,7 +2969,93 @@ p{ text-wrap:pretty; }
     left:-18%;
     right:-18%;
     height:24px;
+    border-radius:50% 50% 0 0 / 100% 100% 0 0;
     clip-path:ellipse(68% 100% at 50% 100%);
   }
+}
+
+/* Personal story: a quieter reading block inside the Why section. */
+.why-section{
+  background:
+    radial-gradient(circle at 88% 12%,color-mix(in srgb,var(--color-pink) 18%,transparent),transparent 28%),
+    var(--text-primary);
+}
+.why-story{
+  display:grid;
+  grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr);
+  gap:clamp(40px,9vw,140px);
+  max-width:var(--content-max);
+  margin:clamp(64px,8vw,100px) auto 0;
+  padding:clamp(28px,4vw,54px) 0;
+  background:linear-gradient(110deg,color-mix(in srgb,var(--color-pink) 10%,transparent),transparent 58%);
+  border-radius:var(--radius-lg);
+}
+.why-story-heading{padding-left:clamp(18px,3vw,40px)}
+.why-story-heading span{
+  display:block;
+  margin-bottom:22px;
+  color:var(--color-pink);
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:.18em;
+  line-height:1.4;
+}
+.why-story-heading h3{
+  max-width:11ch;
+  margin:0;
+  color:var(--surface-page);
+  font-size:clamp(30px,3.4vw,48px);
+  font-weight:500;
+  letter-spacing:-.045em;
+  line-height:.98;
+}
+.why-story-heading h3 em{
+  color:var(--color-pink-soft);
+  font-family:var(--font-display);
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:-.02em;
+}
+.why-story-copy{
+  max-width:640px;
+  padding:0 clamp(18px,3vw,40px) 0 0;
+}
+.why-story-copy p{
+  margin:0 0 20px;
+  color:var(--surface-secondary);
+  font-size:clamp(14px,1.1vw,16px);
+  line-height:1.75;
+  text-wrap:pretty;
+}
+.why-story-copy p:last-child{margin-bottom:0}
+.why-story-copy .why-story-note{
+  margin-top:30px;
+  padding:18px 20px;
+  background:color-mix(in srgb,var(--color-pink) 14%,transparent);
+  border-radius:var(--radius-sm);
+  color:var(--surface-page);
+  font-size:13px;
+}
+.feature-grid{position:relative;z-index:1;margin-top:clamp(64px,8vw,100px)}
+.why-section:after{
+  box-shadow:0 -10px 30px color-mix(in srgb,var(--color-pink) 8%,transparent);
+}
+@media(max-width:800px){
+  .why-story{
+    display:block;
+    margin-top:52px;
+    padding:24px 0 0;
+    background:linear-gradient(145deg,color-mix(in srgb,var(--color-pink) 12%,transparent),transparent 72%);
+  }
+  .why-story-heading{padding:0 18px;margin-bottom:34px}
+  .why-story-heading span{margin-bottom:16px}
+  .why-story-heading h3{max-width:13ch;font-size:38px}
+  .why-story-copy{padding:0 18px}
+  .why-story-copy p{font-size:14px;line-height:1.7}
+  .why-story-copy .why-story-note{margin-top:26px;padding:16px;font-size:13px}
+  .feature-grid{margin-top:64px}
+}
+@media(prefers-reduced-motion:reduce){
+  .why-story-copy p,.why-story-heading h3{transition:none}
 }
 

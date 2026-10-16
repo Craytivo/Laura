@@ -41,7 +41,7 @@ export default function App(): React.ReactElement {
     <main>
       <Hero image={heroImage} service={signatureService} business={site} onBook={book} onNavigate={navigateTo} />
       <SignatureService image={signatureImage} service={signatureService} business={site} onBook={book} />
-      <WhySugaring features={site.why} />
+      <WhySugaring features={site.why} story={site.whyStory} />
       <Services services={services} selected={selectedService} onSelect={toggleService} bookingUrl={bookingUrl} />
       <Gallery images={galleryImages} />
       <Bundles bundles={bundles} bookingUrl={bookingUrl} />
