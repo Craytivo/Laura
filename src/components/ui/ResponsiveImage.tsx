@@ -18,6 +18,6 @@ export function ResponsiveImage({ image, className = "", loading = "lazy", fetch
   return <picture>
     <source type="image/avif" srcSet={`/images/optimized/${basePath}.avif`} />
     <source type="image/webp" srcSet={`/images/optimized/${basePath}.webp`} />
-    <img className={className} src={image.src} alt={image.alt} loading={loading} fetchPriority={fetchPriority} decoding="async" sizes={sizes} />
+    <img className={className} src={image.src} alt={image.alt} width={image.width} height={image.height} loading={loading} fetchPriority={fetchPriority} decoding="async" sizes={sizes} />
   </picture>;
 }

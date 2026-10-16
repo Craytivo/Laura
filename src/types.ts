@@ -34,6 +34,8 @@ export type ImageRole = "hero" | "signature" | "gallery";
 export interface SiteImage {
   src: string;
   alt: string;
+  width: number;
+  height: number;
   priority: boolean;
   role: ImageRole;
 }
