@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { Card, CardBody } from "@heroui/react";
 import { Button } from "../../../components/Button";
 import { Pill } from "../../../components/ui/Pill";
 import { Eyebrow } from "../../../components/ui/Eyebrow";
 import { ResponsiveImage } from "../../../components/ui/ResponsiveImage";
+import { useHeroMotion } from "../../../hooks/useHeroMotion";
 
 export function Hero({ image, service, business, onBook, onNavigate }) {
+  const heroRef = useRef(null);
+  useHeroMotion(heroRef);
+
   return (
-    <section id="home" className="hero">
+    <section ref={heroRef} id="home" className="hero">
       <div className="hero-copy">
         <img className="ru-monogram ru-monogram-hero" src="/images/ru-monogram.svg" alt="" aria-hidden="true" />
         <div className="hero-kicker">
@@ -37,7 +41,7 @@ export function Hero({ image, service, business, onBook, onNavigate }) {
       </div>
       <div className="hero-art">
         <div className="hero-art-frame">
-          <ResponsiveImage image={image} className="hero-photo" loading="eager" fetchPriority="high" sizes="(max-width: 800px) 100vw, 42vw" />
+          <ResponsiveImage image={image} className="hero-photo" loading="eager" fetchPriority="high" sizes="(max-width: 800px) 100vw, (max-width: 1100px) 55vw, 50vw" />
           <div className="hero-art-wash" aria-hidden="true" />
           <div className="hero-art-inner">
             <div className="hero-art-copy"><span>THE RU EXPERIENCE</span><strong>Private.<br /><em>Personal.</em></strong><small>EDMONTON</small></div>
