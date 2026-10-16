@@ -3127,6 +3127,36 @@ body{overflow-wrap:break-word}
   .footer-bottom{margin-top:36px;gap:10px}
 }
 
+/* Keep section boundaries consistent: quiet straight rules instead of curved overlays. */
+.signature:before,
+.dark-section:after,
+.bundles:after,
+.faq:after,
+.book:after{
+  content:"";
+  left:var(--gutter);
+  right:var(--gutter);
+  bottom:0;
+  height:1px;
+  border-radius:0;
+  clip-path:none;
+  transform:none;
+  background:color-mix(in srgb,var(--text-primary) 10%,transparent);
+}
+.dark-section:after{background:color-mix(in srgb,var(--surface-page) 16%,transparent)}
+.book:after{background:color-mix(in srgb,var(--surface-page) 18%,transparent)}
+
+/* Mobile My Why stays direct and editorial; the caution note keeps its established treatment. */
+@media(max-width:800px){
+  .why-section{background:var(--text-primary)}
+  .why-story{background:none}
+  .why-story-heading{margin-bottom:20px}
+  .why-story-copy{padding:0}
+  .why-story-paragraphs{gap:10px}
+  .why-story-copy p{line-height:1.55}
+  .feature-grid>div{background:none}
+}
+
 /* My Why: a compact editorial split that keeps the personal story readable without overextending the section. */
 .why-story{
   grid-template-columns:minmax(190px,.72fr) minmax(0,1.28fr);
