@@ -13,7 +13,7 @@ export function FAQItem({ question, answer }: FAQItemProps): React.ReactElement 
         <span>{question}</span>
         <Plus className="faq-plus" size={18} aria-hidden="true" />
       </summary>
-      <p>{answer}</p>
+      <div className="faq-answer"><p>{answer}</p></div>
     </details>
   );
 }
