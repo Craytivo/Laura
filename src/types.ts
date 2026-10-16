@@ -61,7 +61,8 @@ export interface SiteConfig {
   description: string;
   heroEyebrow: string;
   trust: readonly string[];
-  experience: string;
+  experience: readonly string[];
+  tagline: string;
   why: readonly WhyFeature[];
   signature: {
     kicker: string;

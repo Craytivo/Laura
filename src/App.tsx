@@ -35,8 +35,7 @@ export default function App(): React.ReactElement {
   const heroImage = images.find(image => image.role === "hero");
   const signatureImage = images.find(image => image.role === "signature");
   const galleryImages = images.filter(image => image.role === "gallery");
-  if (!signatureService || !heroImage || !signatureImage || galleryImages.length < 4) throw new Error("RU Sugaring content configuration is incomplete.");
-  const allGalleryImages = [heroImage, signatureImage, ...galleryImages];
+  if (!signatureService || !heroImage || !signatureImage || galleryImages.length !== 4) throw new Error("RU Sugaring content configuration is incomplete.");
   return <div className="site">
     <Header open={isNavigationOpen} onToggle={() => setIsNavigationOpen(value => !value)} onNavigate={navigateTo} onBook={book} business={site} service={signatureService} />
     <main>
@@ -44,7 +43,7 @@ export default function App(): React.ReactElement {
       <SignatureService image={signatureImage} service={signatureService} business={site} onBook={book} />
       <WhySugaring features={site.why} />
       <Services services={services} selected={selectedService} onSelect={toggleService} bookingUrl={bookingUrl} />
-      <Gallery images={allGalleryImages} />
+      <Gallery images={galleryImages} />
       <Bundles bundles={bundles} bookingUrl={bookingUrl} />
       <FAQ items={faq} />
       <FinalCTA onBook={book} onNavigate={navigateTo} />
