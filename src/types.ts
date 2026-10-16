@@ -11,12 +11,15 @@ export type ServiceId =
   | "full-face"
   | "tailored-add-ons";
 
+export type ServiceCategory = "Intimate" | "Body" | "Face & details";
+
 export interface Service {
   id: ServiceId;
   name: string;
   price: string;
   duration: string;
   description: string;
+  category: ServiceCategory;
   badge?: string;
   featured?: boolean;
 }

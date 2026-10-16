@@ -14,7 +14,7 @@ export function Hero({ image, service, business, onBook, onNavigate }) {
   return (
     <section ref={heroRef} id="home" className="hero">
       <div className="hero-copy">
-        <img className="ru-monogram ru-monogram-hero" src="/images/ru-monogram.svg" alt="" aria-hidden="true" />
+        <img className="ru-monogram ru-monogram-hero" src="/images/ru-monogram.svg" alt="" aria-hidden="true" width="180" height="180" />
         <div className="hero-kicker">
           <span className="hero-kicker-number">01</span>
           <Pill>Private Studio</Pill>
