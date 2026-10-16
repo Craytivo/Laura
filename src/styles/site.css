@@ -3235,7 +3235,13 @@ body{overflow-wrap:break-word}
   .why-story-copy .why-story-note{margin-top:18px;padding:14px;font-size:12px}
   .feature-grid{grid-template-columns:1fr;gap:0;margin-top:38px}
   .feature-grid>div{padding:17px 0 16px;background:linear-gradient(90deg,color-mix(in srgb,var(--color-pink) 14%,transparent),transparent 70%)}
-  .feature-grid h3{margin:7px 0 5px;font-size:19px}
+.feature-grid h3{margin:7px 0 5px;font-size:19px}
+}
+
+/* Mobile Why stays text-led; keep the established caution-note background only. */
+@media(max-width:800px){
+  .why-story,
+  .feature-grid>div{background:none!important}
 }
 
 /* Keep the page markers single-purpose: one compact label per section. */
