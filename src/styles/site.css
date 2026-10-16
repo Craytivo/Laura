@@ -3127,6 +3127,46 @@ body{overflow-wrap:break-word}
   .footer-bottom{margin-top:36px;gap:10px}
 }
 
+/* Desktop hero: let the image carry more of the first viewport without crowding the copy. */
+@media(min-width:801px){
+  .hero{grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr)}
+  .hero-copy{padding-right:clamp(20px,2.5vw,38px)}
+  .hero-art{padding-right:clamp(14px,2.2vw,32px)}
+  .hero-art-frame{width:min(100%,760px)}
+}
+
+/* Service menu: a premium list with spacing and a quiet pink active rail. */
+.services .service-category + .service-category{margin-top:clamp(42px,5vw,76px)}
+.services .service-category-heading{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+.services .service-category-heading span{color:var(--accent-strong);font-size:9px;letter-spacing:.14em}
+.services .service-category-heading h3{margin:0;font-size:clamp(20px,2vw,28px);font-weight:500;letter-spacing:-.035em}
+.services .service-card{position:relative;overflow:hidden;transition:background-color .18s ease,transform .18s ease}
+.services .service-card::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:2px;background:var(--accent-strong);transform:scaleY(0);transform-origin:center;transition:transform .18s ease}
+.services .service-card:hover,
+.services .service-card:focus-within{background:color-mix(in srgb,var(--color-pink-soft) 42%,transparent);transform:translateX(3px)}
+.services .service-card.selected{background:color-mix(in srgb,var(--color-pink-soft) 54%,transparent)}
+.services .service-card:hover::before,
+.services .service-card:focus-within::before,
+.services .service-card.selected::before{transform:scaleY(1)}
+@media(max-width:800px){
+  .services .service-category + .service-category{margin-top:38px}
+  .services .service-category-heading{margin-bottom:10px}
+  .services .service-card::before{top:12px;bottom:12px}
+}
+
+/* Compact footer band: preserve the contact information without repeating another hero. */
+.site-footer{padding-top:clamp(42px,5vw,68px);padding-bottom:18px}
+.footer-main{gap:clamp(24px,4vw,64px)}
+.footer-intro h2{margin-top:24px;font-size:clamp(36px,3.8vw,56px)}
+.footer-description{font-size:11px;line-height:1.55}
+.footer-bottom{margin-top:clamp(32px,4vw,54px);padding-top:16px}
+@media(max-width:600px){
+  .site-footer{padding:40px 20px 16px}
+  .footer-main{gap:24px 18px}
+  .footer-intro h2{margin:20px 0 14px;font-size:clamp(38px,11vw,50px)}
+  .footer-bottom{margin-top:30px}
+}
+
 /* Keep section boundaries consistent: quiet straight rules instead of curved overlays. */
 .signature:before,
 .dark-section:after,
