@@ -13,7 +13,6 @@ export function Hero({ image, service, business, onBook, onNavigate }) {
         <img className="ru-monogram ru-monogram-hero" src="/images/ru-monogram.svg" alt="" aria-hidden="true" />
 
         <div className="hero-kicker">
-          <span className="hero-kicker-number">01</span>
           <Pill>Private Studio</Pill>
           <span>EDMONTON</span>
         </div>
@@ -64,7 +63,7 @@ export function Hero({ image, service, business, onBook, onNavigate }) {
             <div className="hero-art-copy">
               <span>THE RU EXPERIENCE</span>
               <strong>Private.<br /><em>Personal.</em></strong>
-              <small>EDMONTON</small>
+              <small>BY APPOINTMENT</small>
             </div>
             <div className="hero-art-orbit" aria-hidden="true"><span>RU</span></div>
           </div>

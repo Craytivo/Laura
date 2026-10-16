@@ -35,7 +35,7 @@
 
   --border-default: var(--color-line);
   --accent: var(--color-pink);
-  --accent-strong: var(--color-olive);
+  --accent-strong: var(--color-pink-deep);
 
   /* Derived states — generated instead of storing another hex value. */
   --accent-surface: color-mix(in srgb, var(--accent) 14%, transparent);
@@ -1026,68 +1026,6 @@ h1,h2,h3,strong{ font-variant-numeric:proportional-nums; }
   font-family:var(--font-display);
   font-size:10px;
 }
-.signature{
-  position:relative;
-}
-.signature:after{
-  content:"02";
-  position:absolute;
-  top:48px;
-  right:5vw;
-  color:var(--accent);
-  font-family:var(--font-display);
-  font-size:14px;
-  line-height:1;
-}
-.dark-section{
-  position:relative;
-}
-.dark-section:before{
-  content:"03";
-  position:absolute;
-  top:48px;
-  right:5vw;
-  color:color-mix(in srgb, var(--surface-page) 40%, transparent);
-  font-family:var(--font-display);
-  font-size:14px;
-}
-.bundles{
-  position:relative;
-}
-.bundles:before{
-  content:"08";
-  position:absolute;
-  top:48px;
-  right:5vw;
-  color:var(--accent);
-  font-family:var(--font-display);
-  font-size:14px;
-}
-.faq{
-  position:relative;
-}
-.faq:before{
-  content:"06";
-  position:absolute;
-  top:48px;
-  right:5vw;
-  color:var(--accent);
-  font-family:var(--font-display);
-  font-size:14px;
-}
-.book{
-  position:relative;
-}
-.book:before{
-  content:"07";
-  position:absolute;
-  top:48px;
-  right:5vw;
-  color:color-mix(in srgb, var(--text-primary) 55%, transparent);
-  font-family:var(--font-display);
-  font-size:14px;
-}
-
 /* 04 — Continuous vertical rhythm */
 .signature-copy{
   padding-top:clamp(72px,8vw,110px);
@@ -1185,15 +1123,6 @@ footer{
   .services .service-main p{
     font-size:11px;
   }
-  .signature:after,
-  .dark-section:before,
-  .bundles:before,
-  .faq:before,
-  .book:before{
-    top:28px;
-    right:22px;
-    font-size:11px;
-  }
   .dark-section{
     padding-top:82px;
     padding-bottom:88px;
@@ -1226,12 +1155,6 @@ footer{
   align-items:center;
   gap:11px;
   margin-bottom:24px;
-}
-.hero-kicker-number{
-  color:var(--accent);
-  font-family:var(--font-display);
-  font-size:15px;
-  line-height:1;
 }
 .hero-kicker>span:last-child{
   color:var(--text-muted);
@@ -3070,7 +2993,7 @@ p{ text-wrap:pretty; }
   .why-story-copy p,.why-story-heading h3{transition:none}
 }
 
-/* One consistent section index system: 01 Hero, 02 Signature, 03 Why, 04 Services, 05 Gallery, 06 Bundles, 07 FAQ, 08 Booking. */
+/* One consistent section index system: 02 Signature through 08 Booking. The hero remains unnumbered. */
 .hero,
 .signature,
 .why-section,
@@ -3098,11 +3021,7 @@ p{ text-wrap:pretty; }
 }
 .book .section-index{color:var(--text-primary)}
 .signature-copy:after,
-.gallery-heading:after,
-.dark-section:before,
-.bundles:before,
-.faq:before,
-.book:before{
+.gallery-heading:after{
   content:none;
 }
 .signature-copy:after{content:none!important;display:none!important}
@@ -3125,5 +3044,90 @@ p{ text-wrap:pretty; }
     padding-top:42px;
     padding-bottom:calc(92px + env(safe-area-inset-bottom));
   }
+}
+
+/* Final refinement: a tonal fade gives the Why section a quieter, more intentional entrance and exit. */
+.signature:before{display:none!important}
+.why-section:before,
+.why-section:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  z-index:0;
+  pointer-events:none;
+  clip-path:none;
+  border-radius:0;
+  transform:none;
+  box-shadow:none;
+}
+.why-section:before{
+  top:0;
+  height:clamp(54px,7vw,110px);
+  background:linear-gradient(to bottom,var(--surface-secondary),color-mix(in srgb,var(--text-primary) 78%,transparent) 55%,transparent);
+}
+.why-section:after{
+  bottom:0;
+  height:clamp(64px,8vw,124px);
+  background:linear-gradient(to bottom,transparent,color-mix(in srgb,var(--text-primary) 72%,var(--surface-page) 28%) 38%,var(--surface-page));
+}
+.why-section > *{position:relative;z-index:1}
+.signature .signature-copy:after{content:none!important;display:none!important;visibility:hidden!important}
+
+/* Keep the reading measure generous on desktop and comfortably inset on small screens. */
+body{overflow-wrap:break-word}
+.hero-text,
+.signature-copy>p:not(.eyebrow),
+.section-lede,
+.why-story-copy,
+.faq-answer p,
+.book-description{max-width:42rem}
+@media(min-width:801px){
+  .hero-copy{padding-inline:clamp(48px,7vw,112px)}
+  .section-heading,.gallery-heading,.why-story,.feature-grid,.service-list,.footer-main,.footer-bottom{width:100%;max-width:var(--content-max)}
+}
+@media(max-width:800px){
+  .why-section{padding-top:64px;padding-bottom:58px}
+  .why-section .section-heading{margin-bottom:0}
+  .why-section .section-heading h2{font-size:clamp(44px,12vw,54px)}
+  .why-story{margin-top:30px;padding-top:0}
+  .why-story-heading{margin-bottom:24px}
+  .why-story-heading h3{font-size:32px;line-height:.95}
+  .why-story-copy p{margin-bottom:14px;line-height:1.6}
+  .why-story-copy .why-story-note{margin-top:18px;padding:14px}
+  .feature-grid{margin-top:42px;gap:32px}
+}
+
+/* Minimal hero polish: let the type and image carry the first impression. */
+.hero-copy{max-width:760px}
+.hero h1{max-width:8ch;letter-spacing:-.06em}
+.hero-art-frame{border:0;box-shadow:none}
+.hero-art-wash{background:linear-gradient(145deg,color-mix(in srgb,var(--surface-page) 76%,transparent),transparent 62%,color-mix(in srgb,var(--color-pink) 20%,transparent))}
+.hero-art-orbit{width:96px;height:96px;border-color:color-mix(in srgb,var(--text-primary) 16%,transparent);background:color-mix(in srgb,var(--surface-raised) 10%,transparent);backdrop-filter:none;box-shadow:none}
+.ru-monogram-hero{opacity:.2;transform:scale(.82)}
+@media(max-width:800px){
+  .hero-copy{max-width:none}
+  .hero h1{max-width:none;letter-spacing:-.055em}
+  .hero-art-orbit{width:78px;height:78px;font-size:32px}
+}
+
+/* Keep the page markers single-purpose: one compact label per section. */
+.services .section-marker{
+  color:var(--color-pink-deep);
+  opacity:1;
+}
+.services .section-heading .eyebrow{
+  color:var(--text-muted);
+}
+.service-card:hover,
+.service-card:focus-within{
+  background:color-mix(in srgb,var(--color-pink-soft) 38%,transparent);
+}
+.service-card.selected,
+.service-card[aria-expanded="true"]{
+  background:color-mix(in srgb,var(--color-pink-soft) 54%,transparent);
+}
+@media(min-width:801px){
+  .hero .ru-monogram-hero{display:none}
 }
 

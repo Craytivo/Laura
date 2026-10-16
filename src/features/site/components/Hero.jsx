@@ -6,7 +6,6 @@ import { Pill } from "../../../components/ui/Pill";
 import { Eyebrow } from "../../../components/ui/Eyebrow";
 import { ResponsiveImage } from "../../../components/ui/ResponsiveImage";
 import { useHeroMotion } from "../../../hooks/useHeroMotion";
-import { SectionIndex } from "../../../components/ui/SectionIndex";
 
 export function Hero({ image, service, business, onBook, onNavigate }) {
   const heroRef = useRef(null);
@@ -14,7 +13,7 @@ export function Hero({ image, service, business, onBook, onNavigate }) {
 
   return (
     <section ref={heroRef} id="home" className="hero">
-      <SectionIndex number="01" /><div className="hero-copy">
+      <div className="hero-copy">
         <img className="ru-monogram ru-monogram-hero" src="/images/ru-monogram.svg" alt="" aria-hidden="true" width="180" height="180" />
         <div className="hero-kicker">
           <Pill>Private Studio</Pill>
@@ -44,7 +43,7 @@ export function Hero({ image, service, business, onBook, onNavigate }) {
           <ResponsiveImage image={image} className="hero-photo" loading="eager" fetchPriority="high" sizes="(max-width: 800px) 100vw, (max-width: 1100px) 55vw, 50vw" />
           <div className="hero-art-wash" aria-hidden="true" />
           <div className="hero-art-inner">
-            <div className="hero-art-copy"><span>THE RU EXPERIENCE</span><strong>Private.<br /><em>Personal.</em></strong><small>EDMONTON</small></div>
+            <div className="hero-art-copy"><span>THE RU EXPERIENCE</span><strong>Private.<br /><em>Personal.</em></strong><small>BY APPOINTMENT</small></div>
             <div className="hero-art-orbit" aria-hidden="true"><span>RU</span></div>
           </div>
         </div>
