@@ -29,6 +29,7 @@ export function Hero({ image, service, business, onBook, onNavigate }) {
           <Button onClick={onBook}>Book your {service.name} <ArrowRight size={17} /></Button>
           <button className="text-button" type="button" onClick={() => onNavigate("services")}>Explore services <ArrowRight size={14} /></button>
         </div>
+        <p className="hero-reassurance">Private studio · Edgemont · By appointment</p>
         <div className="hero-trust" aria-label="RU Sugaring trust points">
           {business.trust.map(item => <span key={item}><Check size={13} /> {item}</span>)}
         </div>

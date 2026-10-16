@@ -633,6 +633,93 @@ footer{display:grid;grid-template-columns:1fr 1.2fr 1.25fr auto;gap:40px;align-i
   box-shadow:inset 2px 0 0 var(--accent);
   background:color-mix(in srgb, var(--accent) 8%, transparent);
 }
+
+/* Readability and conversion refinement: keep the editorial tone, improve scanning. */
+.hero-reassurance{
+  margin:13px 0 0;
+  color:var(--text-muted);
+  font-size:10px;
+  line-height:1.4;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.hero-actions .button{
+  min-height:54px;
+  padding-inline:24px;
+  font-size:11px;
+  letter-spacing:.08em;
+}
+.hero-actions .text-button{
+  font-size:10px;
+}
+.hero-text,
+.section-lede,
+.feature-grid p,
+.gallery-intro-side p,
+.bundle-intro>p{
+  font-size:15px;
+}
+.hero-trust span,
+.service-main p,
+.service-main small,
+.bundle-card p,
+.footer-contact,
+.footer-contact a{
+  font-size:11px;
+}
+.services .service-card.featured{
+  background:color-mix(in srgb,var(--accent) 11%,transparent);
+  box-shadow:inset 3px 0 0 var(--accent-strong),0 8px 24px color-mix(in srgb,var(--text-primary) 4%,transparent);
+}
+.services .service-card.featured .service-title h3{
+  font-size:25px;
+}
+.services .service-card.featured .service-title strong{
+  font-size:18px;
+}
+.gallery-intro-side p{
+  max-width:390px;
+  line-height:1.7;
+}
+.gallery-link{
+  font-size:10px;
+  letter-spacing:.1em;
+}
+.faq summary{
+  min-height:58px;
+  font-size:16px;
+}
+.faq details p{
+  font-size:14px;
+}
+.bundle-card{
+  min-height:86px;
+}
+.bundle-card strong{
+  font-size:18px;
+}
+.footer-contact{
+  line-height:1.55;
+}
+@media(max-width:800px){
+  .hero-reassurance{
+    font-size:9px;
+  }
+  .hero-text,
+  .section-lede,
+  .feature-grid p,
+  .gallery-intro-side p,
+  .bundle-intro>p{
+    font-size:14px;
+  }
+  .services .service-card.featured .service-title h3{
+    font-size:21px;
+  }
+  .faq summary{
+    min-height:54px;
+    font-size:15px;
+  }
+}
 .services .service-card.selected{
   background:var(--surface-secondary);
   box-shadow:inset 2px 0 0 var(--accent);
