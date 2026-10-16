@@ -7,11 +7,11 @@ export function Gallery({ images }) {
   const galleryImages = images.filter(image => image.role === "gallery").slice(0, 4);
 
   return (
-    <section id="gallery" className="gallery-section" data-reveal><SectionIndex number="05" />
+    <section id="gallery" className="gallery-section" data-reveal><SectionIndex number="05" label="THE RU EDIT" />
       <div className="gallery-intro">
         <div className="gallery-title">
           <div>
-            <p className="eyebrow">THE RU EDIT</p>
+            <p className="eyebrow">A CLOSER LOOK</p>
             <h2>A closer look<br /><em>at RU.</em></h2>
           </div>
         </div>

@@ -10,8 +10,8 @@ interface FAQProps {
 
 export function FAQ({ items }: FAQProps): React.ReactElement {
   return (
-    <section id="faq" className="section faq" data-reveal><SectionIndex number="07" />
-      <SectionHeading eyebrow="Good to know" description="A few thoughtful details before your private appointment.">
+    <section id="faq" className="section faq" data-reveal><SectionIndex number="07" label="GOOD TO KNOW" />
+      <SectionHeading eyebrow="Before your visit" description="A few thoughtful details before your private appointment.">
         <h2>Your questions,<br /><em>answered.</em></h2>
       </SectionHeading>
       <div className="faq-list">
