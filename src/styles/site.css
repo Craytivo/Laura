@@ -2844,3 +2844,127 @@ p{ text-wrap:pretty; }
   .services .service-card,.services .service-expanded,.services .service-select::after{transition:none}
 }
 
+/* Minimal surface pass: use space and tone instead of repeated divider lines. */
+.nav{border-bottom:0}
+.services .service-list{border-top:0}
+.services .section-heading:after{content:none}
+.hero-offer,.signature-price{border:0}
+.faq-answer{border-left:0;padding-left:0}
+.intro-meta span{border-bottom:0}
+.intro-meta,
+.feature-grid>div,
+.service-category-heading,
+.service-book-row,
+.service-note,
+.signature-details,
+.faq-list,
+.faq-item,
+.bundle-list,
+.bundle-card,
+.selected-service-inner,
+.footer-bottom{
+  border-top:0;
+  border-bottom:0;
+}
+.chosen-pill,
+.faq-item summary,
+.footer-instagram{
+  border-color:transparent;
+}
+.services .service-category-heading{
+  margin-bottom:18px;
+  padding-bottom:0;
+}
+.services .service-card,
+.services .service-card.featured,
+.services .service-card.selected{
+  margin-block:4px;
+  padding-inline:14px;
+  border:0;
+  box-shadow:none;
+  background:transparent;
+}
+.services .service-card:hover,
+.services .service-card.selected{
+  background:var(--surface-secondary);
+}
+.services .service-card:hover{transform:none}
+.services .service-card.featured{
+  background:color-mix(in srgb,var(--accent) 10%,var(--surface-page));
+}
+.services .service-card.featured:hover,
+.services .service-card.featured.selected{
+  background:color-mix(in srgb,var(--accent) 16%,var(--surface-page));
+}
+.services .service-select-area,
+.services .service-card.featured .service-select-area{
+  padding-block:22px;
+}
+.services .service-card.featured .service-select-area{padding-left:4px}
+.service-book-row{margin-top:26px}
+.service-note{margin-top:42px}
+.faq-item summary:hover,
+.faq-item summary:focus-visible,
+.faq-item[open] summary{
+  background:var(--surface-secondary);
+  border-radius:var(--radius-sm);
+}
+.faq-item[open]{background:transparent}
+.bundle-card:hover{padding-left:14px;background:var(--surface-secondary)}
+.footer-instagram{border:0}
+@media(max-width:800px){
+  .services .service-card,
+  .services .service-card.featured,
+  .services .service-card.selected{
+    margin-block:3px;
+    padding-inline:10px;
+  }
+  .services .service-select-area,
+  .services .service-card.featured .service-select-area{
+    padding-block:19px;
+  }
+  .services .service-card.featured .service-select-area{padding-left:4px}
+  .faq-item summary{border-radius:var(--radius-sm)}
+}
+
+/* Organic section transitions: soft overlaps replace hard horizontal rules. */
+.section:not(.services):after,
+.gallery-section:after,
+.dark-section:after,
+.book:after{
+  height:0;
+  background:none;
+}
+.signature:before,
+.dark-section:after,
+.bundles:after,
+.faq:after,
+.book:after{
+  content:"";
+  position:absolute;
+  z-index:3;
+  left:-7%;
+  right:-7%;
+  bottom:-1px;
+  height:clamp(22px,3vw,46px);
+  pointer-events:none;
+  clip-path:ellipse(72% 100% at 50% 100%);
+}
+.signature:before{background:var(--text-primary)}
+.dark-section:after{background:var(--surface-page)}
+.bundles:after{background:var(--surface-page)}
+.faq:after{background:var(--accent)}
+.book:after{background:var(--text-primary)}
+@media(max-width:800px){
+  .signature:before,
+  .dark-section:after,
+  .bundles:after,
+  .faq:after,
+  .book:after{
+    left:-18%;
+    right:-18%;
+    height:24px;
+    clip-path:ellipse(68% 100% at 50% 100%);
+  }
+}
+
